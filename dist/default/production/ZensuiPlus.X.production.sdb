@@ -1,0 +1,1344 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PIC14E SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18345 ]
+[d frameptr 6 ]
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_gpio.c
+[e E7835 gpio_port `uc
+GPIO_PORTA 0
+GPIO_PORTB 1
+GPIO_PORTC 2
+]
+[e E7840 gpio_pin `uc
+GPIO_PIN0 0
+GPIO_PIN1 1
+GPIO_PIN2 2
+GPIO_PIN3 3
+GPIO_PIN4 4
+GPIO_PIN5 5
+GPIO_PIN6 6
+GPIO_PIN7 7
+]
+[e E7850 gpio_state `uc
+GPIO_ANALOG 0
+GPIO_INPUT_FLOATING 1
+GPIO_INPUT_PULLUP 2
+GPIO_OUTPUT_HIGH 3
+GPIO_OUTPUT_LOW 4
+]
+"37
+[e E7857 gpio_outputpps `uc
+GPIO_OUTPUTPPS_PWM5 2
+GPIO_OUTPUTPPS_PWM6 3
+GPIO_OUTPUTPPS_CLC1OUT 4
+GPIO_OUTPUTPPS_CLC2OUT 5
+GPIO_OUTPUTPPS_CLC3OUT 6
+GPIO_OUTPUTPPS_CLC4OUT 7
+GPIO_OUTPUTPPS_CWG1A 8
+GPIO_OUTPUTPPS_CWG1B 9
+GPIO_OUTPUTPPS_CWG1C 10
+GPIO_OUTPUTPPS_CWG1D 11
+GPIO_OUTPUTPPS_CCP1 12
+GPIO_OUTPUTPPS_CCP2 13
+GPIO_OUTPUTPPS_CCP3 14
+GPIO_OUTPUTPPS_CCP4 15
+GPIO_OUTPUTPPS_CWG2A 16
+GPIO_OUTPUTPPS_CWG2B 17
+GPIO_OUTPUTPPS_CWG2C 18
+GPIO_OUTPUTPPS_CWG2D 19
+GPIO_OUTPUTPPS_TX_CK 20
+GPIO_OUTPUTPPS_DT 21
+GPIO_OUTPUTPPS_C1 22
+GPIO_OUTPUTPPS_C2 23
+GPIO_OUTPUTPPS_SCK1_SCL1 24
+GPIO_OUTPUTPPS_SDO1_SDA1 25
+GPIO_OUTPUTPPS_TMR0 28
+GPIO_OUTPUTPPS_NCO1 29
+GPIO_OUTPUTPPS_CLKR 30
+GPIO_OUTPUTPPS_DSM 31
+]
+"6 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_osc.c
+[e E8275 osc_nosc_cosc `uc
+OSC_NOSC_COSC_HFINTOSC_2PLL 0
+OSC_NOSC_COSC_EXTOSC_4PLL 1
+OSC_NOSC_COSC_SOSC 3
+OSC_NOSC_COSC_LFINTOSC 4
+OSC_NOSC_COSC_HFINTOSC 6
+OSC_NOSC_COSC_EXTOSC 7
+]
+"7
+[e E8283 osc_ndiv_cdiv `uc
+OSC_NDIV_CDIV_1 0
+OSC_NDIV_CDIV_2 1
+OSC_NDIV_CDIV_4 2
+OSC_NDIV_CDIV_8 3
+OSC_NDIV_CDIV_16 4
+OSC_NDIV_CDIV_32 5
+OSC_NDIV_CDIV_64 6
+OSC_NDIV_CDIV_128 7
+OSC_NDIV_CDIV_256 8
+OSC_NDIV_CDIV_512 9
+]
+"4 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_pwm.c
+[e E8106 gpio_port `uc
+GPIO_PORTA 0
+GPIO_PORTB 1
+GPIO_PORTC 2
+]
+[e E8111 gpio_pin `uc
+GPIO_PIN0 0
+GPIO_PIN1 1
+GPIO_PIN2 2
+GPIO_PIN3 3
+GPIO_PIN4 4
+GPIO_PIN5 5
+GPIO_PIN6 6
+GPIO_PIN7 7
+]
+[e E8240 pwm_clk_src `uc
+PWM_CS_TMR2 1
+PWM_CS_TMR4 2
+PWM_CS_TMR6 3
+]
+"6
+[e E8121 gpio_state `uc
+GPIO_ANALOG 0
+GPIO_INPUT_FLOATING 1
+GPIO_INPUT_PULLUP 2
+GPIO_OUTPUT_HIGH 3
+GPIO_OUTPUT_LOW 4
+]
+"7
+[e E8128 gpio_outputpps `uc
+GPIO_OUTPUTPPS_PWM5 2
+GPIO_OUTPUTPPS_PWM6 3
+GPIO_OUTPUTPPS_CLC1OUT 4
+GPIO_OUTPUTPPS_CLC2OUT 5
+GPIO_OUTPUTPPS_CLC3OUT 6
+GPIO_OUTPUTPPS_CLC4OUT 7
+GPIO_OUTPUTPPS_CWG1A 8
+GPIO_OUTPUTPPS_CWG1B 9
+GPIO_OUTPUTPPS_CWG1C 10
+GPIO_OUTPUTPPS_CWG1D 11
+GPIO_OUTPUTPPS_CCP1 12
+GPIO_OUTPUTPPS_CCP2 13
+GPIO_OUTPUTPPS_CCP3 14
+GPIO_OUTPUTPPS_CCP4 15
+GPIO_OUTPUTPPS_CWG2A 16
+GPIO_OUTPUTPPS_CWG2B 17
+GPIO_OUTPUTPPS_CWG2C 18
+GPIO_OUTPUTPPS_CWG2D 19
+GPIO_OUTPUTPPS_TX_CK 20
+GPIO_OUTPUTPPS_DT 21
+GPIO_OUTPUTPPS_C1 22
+GPIO_OUTPUTPPS_C2 23
+GPIO_OUTPUTPPS_SCK1_SCL1 24
+GPIO_OUTPUTPPS_SDO1_SDA1 25
+GPIO_OUTPUTPPS_TMR0 28
+GPIO_OUTPUTPPS_NCO1 29
+GPIO_OUTPUTPPS_CLKR 30
+GPIO_OUTPUTPPS_DSM 31
+]
+"63 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[e E8242 tmr1xx_cs `uc
+TMR1XX_CS_FOSC_4 0
+TMR1XX_CS_FOSC 1
+TMR1XX_CS_TxCKI_SOSC 2
+TMR1XX_CS_LFINTOSC 3
+]
+[e E8248 tmr1xx_ckps `uc
+TMR1XX_CKPS_1 0
+TMR1XX_CKPS_2 1
+TMR1XX_CKPS_4 2
+TMR1XX_CKPS_8 3
+]
+[e E8254 tmr1xx_gate_src `uc
+TMR1XX_GATE_SRC_T1G 0
+TMR1XX_GATE_SRC_TMR0OVF 1
+TMR1XX_GATE_SRC_C1OUT 2
+TMR1XX_GATE_SRC_C2OUT 3
+]
+"5 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[e E8237 tmr2xx_ckps `uc
+TMR2XX_CKPS_1 0
+TMR2XX_CKPS_4 1
+TMR2XX_CKPS_16 2
+TMR2XX_CKPS_64 3
+]
+[e E8243 tmr2xx_outps `uc
+TMR2XX_OUTPS_1 0
+TMR2XX_OUTPS_2 1
+TMR2XX_OUTPS_3 2
+TMR2XX_OUTPS_4 3
+TMR2XX_OUTPS_5 4
+TMR2XX_OUTPS_6 5
+TMR2XX_OUTPS_7 6
+TMR2XX_OUTPS_8 7
+TMR2XX_OUTPS_9 8
+TMR2XX_OUTPS_10 9
+TMR2XX_OUTPS_11 10
+TMR2XX_OUTPS_12 11
+TMR2XX_OUTPS_13 12
+TMR2XX_OUTPS_14 13
+TMR2XX_OUTPS_15 14
+TMR2XX_OUTPS_16 15
+]
+"75 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_main.c
+[e E8106 gpio_port `uc
+GPIO_PORTA 0
+GPIO_PORTB 1
+GPIO_PORTC 2
+]
+[e E8111 gpio_pin `uc
+GPIO_PIN0 0
+GPIO_PIN1 1
+GPIO_PIN2 2
+GPIO_PIN3 3
+GPIO_PIN4 4
+GPIO_PIN5 5
+GPIO_PIN6 6
+GPIO_PIN7 7
+]
+[e E8169 pwm_clk_src `uc
+PWM_CS_TMR2 1
+PWM_CS_TMR4 2
+PWM_CS_TMR6 3
+]
+"80
+[e E8121 gpio_state `uc
+GPIO_ANALOG 0
+GPIO_INPUT_FLOATING 1
+GPIO_INPUT_PULLUP 2
+GPIO_OUTPUT_HIGH 3
+GPIO_OUTPUT_LOW 4
+]
+"82
+[e E8204 tmr1xx_cs `uc
+TMR1XX_CS_FOSC_4 0
+TMR1XX_CS_FOSC 1
+TMR1XX_CS_TxCKI_SOSC 2
+TMR1XX_CS_LFINTOSC 3
+]
+[e E8210 tmr1xx_ckps `uc
+TMR1XX_CKPS_1 0
+TMR1XX_CKPS_2 1
+TMR1XX_CKPS_4 2
+TMR1XX_CKPS_8 3
+]
+[e E8216 tmr1xx_gate_src `uc
+TMR1XX_GATE_SRC_T1G 0
+TMR1XX_GATE_SRC_TMR0OVF 1
+TMR1XX_GATE_SRC_C1OUT 2
+TMR1XX_GATE_SRC_C2OUT 3
+]
+"87
+[e E8237 tmr2xx_ckps `uc
+TMR2XX_CKPS_1 0
+TMR2XX_CKPS_4 1
+TMR2XX_CKPS_16 2
+TMR2XX_CKPS_64 3
+]
+[e E8243 tmr2xx_outps `uc
+TMR2XX_OUTPS_1 0
+TMR2XX_OUTPS_2 1
+TMR2XX_OUTPS_3 2
+TMR2XX_OUTPS_4 3
+TMR2XX_OUTPS_5 4
+TMR2XX_OUTPS_6 5
+TMR2XX_OUTPS_7 6
+TMR2XX_OUTPS_8 7
+TMR2XX_OUTPS_9 8
+TMR2XX_OUTPS_10 9
+TMR2XX_OUTPS_11 10
+TMR2XX_OUTPS_12 11
+TMR2XX_OUTPS_13 12
+TMR2XX_OUTPS_14 13
+TMR2XX_OUTPS_15 14
+TMR2XX_OUTPS_16 15
+]
+"62 D:\Program Files\Microchip\xc8\v1.44\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 D:\Program Files\Microchip\xc8\v1.44\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 D:\Program Files\Microchip\xc8\v1.44\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+[v i1___bmul __bmul `(uc  1 e 1 0 ]
+"6 D:\Program Files\Microchip\xc8\v1.44\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"39 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_get_index ir_get_index `(uc  1 s 1 ir_get_index ]
+[v i1_ir_get_index ir_get_index `(uc  1 s 1 i1_ir_get_index ]
+"82
+[v _ir_tmr1_overflow_rest ir_tmr1_overflow_rest `(v  1 e 1 0 ]
+"143
+[v _ir_decode ir_decode `(v  1 e 1 0 ]
+"219
+[v _ir_long_action ir_long_action `(v  1 e 1 0 ]
+"273
+[v _ir_short_action ir_short_action `(v  1 s 1 ir_short_action ]
+"336
+[v _ir_action ir_action `(v  1 e 1 0 ]
+"17 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_turnon_direct led_turnon_direct `(v  1 e 1 0 ]
+"25
+[v _led_turnoff_direct led_turnoff_direct `(v  1 e 1 0 ]
+"33
+[v _led_turnon_ramp led_turnon_ramp `(v  1 s 1 led_turnon_ramp ]
+"39
+[v _led_turnoff_ramp led_turnoff_ramp `(v  1 s 1 led_turnoff_ramp ]
+"45
+[v _led_para_init led_para_init `(v  1 e 1 0 ]
+"67
+[v _led_init led_init `(v  1 e 1 0 ]
+"107
+[v _led_save_para led_save_para `(v  1 e 1 0 ]
+"111
+[v _led_set_state led_set_state `(v  1 e 1 0 ]
+"115
+[v _led_clear_state led_clear_state `(v  1 e 1 0 ]
+"119
+[v _led_get_state led_get_state `(uc  1 e 1 0 ]
+[v i1_led_get_state led_get_state `(uc  1 e 1 0 ]
+"127
+[v _led_get_power_state led_get_power_state `(uc  1 e 1 0 ]
+[v i1_led_get_power_state led_get_power_state `(uc  1 e 1 0 ]
+"131
+[v _led_toggle led_toggle `(v  1 e 1 0 ]
+"135
+[v _led_setcolour led_setcolour `(v  1 e 1 0 ]
+"144
+[v _led_set_increase_bright led_set_increase_bright `(v  1 e 1 0 ]
+[v i1_led_set_increase_bright led_set_increase_bright `(v  1 e 1 0 ]
+"149
+[v _led_set_decrease_bright led_set_decrease_bright `(v  1 e 1 0 ]
+[v i1_led_set_decrease_bright led_set_decrease_bright `(v  1 e 1 0 ]
+"154
+[v _led_set_custom_bright led_set_custom_bright `(v  1 e 1 0 ]
+"161
+[v _led_set_custom led_set_custom `(v  1 e 1 0 ]
+"167
+[v _led_startnotice led_startnotice `(v  1 e 1 0 ]
+"172
+[v _led_notice led_notice `(v  1 s 1 led_notice ]
+"193
+[v _led_ramp led_ramp `(v  1 e 1 0 ]
+"206
+[v _led_run led_run `(v  1 e 1 0 ]
+"42 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_main.c
+[v _main main `(v  1 e 1 0 ]
+"59
+[v _ISR ISR `II(v  1 e 1 0 ]
+"67
+[v _app_init app_init `(v  1 e 1 0 ]
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_util.c
+[v _util_increase util_increase `(v  1 e 1 0 ]
+[v i1_util_increase util_increase `(v  1 e 1 0 ]
+"11
+[v _util_decrease util_decrease `(v  1 e 1 0 ]
+[v i1_util_decrease util_decrease `(v  1 e 1 0 ]
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_eeprom.c
+[v _eeprom_write_byte eeprom_write_byte `(v  1 e 1 0 ]
+"22
+[v _eeprom_read_byte eeprom_read_byte `(uc  1 e 1 0 ]
+"33
+[v _eeprom_write_buffer eeprom_write_buffer `(v  1 e 1 0 ]
+"39
+[v _eeprom_read_buffer eeprom_read_buffer `(v  1 e 1 0 ]
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_gpio.c
+[v _gpio_set gpio_set `(v  1 e 1 0 ]
+"37
+[v _gpio_set_outputpps gpio_set_outputpps `(v  1 e 1 0 ]
+"53
+[v _gpio_set_intputpps gpio_set_intputpps `(uc  1 e 1 0 ]
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_osc.c
+[v _osc_init osc_init `(v  1 e 1 0 ]
+"4 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_pwm.c
+[v _pwm1_init pwm1_init `(v  1 e 1 0 ]
+"15
+[v _pwm1_load_duty pwm1_load_duty `(v  1 e 1 0 ]
+"22
+[v _pwm2_init pwm2_init `(v  1 e 1 0 ]
+"33
+[v _pwm2_load_duty pwm2_load_duty `(v  1 e 1 0 ]
+"40
+[v _pwm3_init pwm3_init `(v  1 e 1 0 ]
+"51
+[v _pwm3_load_duty pwm3_load_duty `(v  1 e 1 0 ]
+"58
+[v _pwm4_init pwm4_init `(v  1 e 1 0 ]
+"69
+[v _pwm4_load_duty pwm4_load_duty `(v  1 e 1 0 ]
+"76
+[v _pwm5_init pwm5_init `(v  1 e 1 0 ]
+"85
+[v _pwm5_load_duty pwm5_load_duty `(v  1 e 1 0 ]
+"63 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v _tmr1_init tmr1_init `(v  1 e 1 0 ]
+"77
+[v _tmr1_writetimer tmr1_writetimer `(v  1 e 1 0 ]
+[v i1_tmr1_writetimer tmr1_writetimer `(v  1 e 1 0 ]
+"89
+[v _tmr1_readtimer tmr1_readtimer `(ui  1 e 2 0 ]
+"102
+[v _tmr1_starttimer tmr1_starttimer `(v  1 e 1 0 ]
+"106
+[v _tmr1_stoptimer tmr1_stoptimer `(v  1 e 1 0 ]
+"110
+[v _tmr1_gate_enabled_isr tmr1_gate_enabled_isr `(v  1 e 1 0 ]
+"118
+[v _tmr1_gate_isr tmr1_gate_isr `(v  1 e 1 0 ]
+"5 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[v _tmr2_init tmr2_init `(v  1 e 1 0 ]
+"13
+[v _tmr2_reload tmr2_reload `(v  1 e 1 0 ]
+"17
+[v _tmr2_starttimer tmr2_starttimer `(v  1 e 1 0 ]
+"25
+[v _tmr2_enabled_isr tmr2_enabled_isr `(v  1 e 1 0 ]
+[v i1_tmr2_enabled_isr tmr2_enabled_isr `(v  1 e 1 0 ]
+"29
+[v _tmr2_disabled_isr tmr2_disabled_isr `(v  1 e 1 0 ]
+"33
+[v _tmr2_isr tmr2_isr `(v  1 e 1 0 ]
+[s S765 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"362 D:\Program Files\Microchip\xc8\v1.44\include\pic16f18345.h
+[u S770 . 1 `S765 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES770  1 e 1 @11 ]
+[s S596 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 BCL1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"583
+[u S605 . 1 `S596 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES605  1 e 1 @17 ]
+"1255
+[v _TMR1L TMR1L `VEuc  1 e 1 @25 ]
+"1275
+[v _TMR1H TMR1H `VEuc  1 e 1 @26 ]
+[s S517 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 T1SOSC 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+"1317
+[s S524 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[u S530 . 1 `S517 1 . 1 0 `S524 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES530  1 e 1 @27 ]
+[s S547 . 1 `uc 1 T1GSS 1 0 :2:0 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO_nDONE 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+"1387
+[s S555 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+]
+[u S558 . 1 `S547 1 . 1 0 `S555 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES558  1 e 1 @28 ]
+"1437
+[v _TMR2 TMR2 `VEuc  1 e 1 @29 ]
+"1457
+[v _PR2 PR2 `VEuc  1 e 1 @30 ]
+[s S691 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"1498
+[s S695 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S703 . 1 `S691 1 . 1 0 `S695 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES703  1 e 1 @31 ]
+"1548
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S575 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 BCL1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1744
+[u S584 . 1 `S575 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES584  1 e 1 @145 ]
+"2291
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2930
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3942
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"6352
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+"6372
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @658 ]
+"6392
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
+[s S257 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+`uc 1 CCP1FMT 1 0 :1:4 
+`uc 1 CCP1OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 CCP1EN 1 0 :1:7 
+]
+"6412
+[s S263 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+`uc 1 CCP1MODE1 1 0 :1:1 
+`uc 1 CCP1MODE2 1 0 :1:2 
+`uc 1 CCP1MODE3 1 0 :1:3 
+]
+[u S268 . 1 `S257 1 . 1 0 `S263 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES268  1 e 1 @659 ]
+"6510
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @661 ]
+"6530
+[v _CCPR2H CCPR2H `VEuc  1 e 1 @662 ]
+"6550
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @663 ]
+[s S317 . 1 `uc 1 CCP2MODE 1 0 :4:0 
+`uc 1 CCP2FMT 1 0 :1:4 
+`uc 1 CCP2OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 CCP2EN 1 0 :1:7 
+]
+"6570
+[s S323 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
+`uc 1 CCP2MODE1 1 0 :1:1 
+`uc 1 CCP2MODE2 1 0 :1:2 
+`uc 1 CCP2MODE3 1 0 :1:3 
+]
+[u S328 . 1 `S317 1 . 1 0 `S323 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES328  1 e 1 @663 ]
+[s S283 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+"6684
+[s S288 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+[u S297 . 1 `S283 1 . 1 0 `S288 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES297  1 e 1 @671 ]
+"6902
+[v _CCPR3L CCPR3L `VEuc  1 e 1 @785 ]
+"6922
+[v _CCPR3H CCPR3H `VEuc  1 e 1 @786 ]
+"6942
+[v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
+[s S345 . 1 `uc 1 CCP3MODE 1 0 :4:0 
+`uc 1 CCP3FMT 1 0 :1:4 
+`uc 1 CCP3OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 CCP3EN 1 0 :1:7 
+]
+"6962
+[s S351 . 1 `uc 1 CCP3MODE0 1 0 :1:0 
+`uc 1 CCP3MODE1 1 0 :1:1 
+`uc 1 CCP3MODE2 1 0 :1:2 
+`uc 1 CCP3MODE3 1 0 :1:3 
+]
+[u S356 . 1 `S345 1 . 1 0 `S351 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES356  1 e 1 @787 ]
+"7060
+[v _CCPR4L CCPR4L `VEuc  1 e 1 @789 ]
+"7080
+[v _CCPR4H CCPR4H `VEuc  1 e 1 @790 ]
+"7100
+[v _CCP4CON CCP4CON `VEuc  1 e 1 @791 ]
+[s S373 . 1 `uc 1 CCP4MODE 1 0 :4:0 
+`uc 1 CCP4FMT 1 0 :1:4 
+`uc 1 CCP4OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 CCP4EN 1 0 :1:7 
+]
+"7120
+[s S379 . 1 `uc 1 CCP4MODE0 1 0 :1:0 
+`uc 1 CCP4MODE1 1 0 :1:1 
+`uc 1 CCP4MODE2 1 0 :1:2 
+`uc 1 CCP4MODE3 1 0 :1:3 
+]
+[u S384 . 1 `S373 1 . 1 0 `S379 1 . 1 0 ]
+[v _CCP4CONbits CCP4CONbits `VES384  1 e 1 @791 ]
+"8930
+[v _PWM5DCL PWM5DCL `VEuc  1 e 1 @1559 ]
+"8966
+[v _PWM5DCH PWM5DCH `VEuc  1 e 1 @1560 ]
+"9036
+[v _PWM5CON PWM5CON `VEuc  1 e 1 @1561 ]
+[s S401 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 PWM5POL 1 0 :1:4 
+`uc 1 PWM5OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PWM5EN 1 0 :1:7 
+]
+"9055
+[u S407 . 1 `S401 1 . 1 0 ]
+[v _PWM5CONbits PWM5CONbits `VES407  1 e 1 @1561 ]
+[s S416 . 1 `uc 1 P5TSEL 1 0 :2:0 
+`uc 1 P6TSEL 1 0 :2:2 
+]
+"9291
+[s S419 . 1 `uc 1 P5TSEL0 1 0 :1:0 
+`uc 1 P5TSEL1 1 0 :1:1 
+`uc 1 P6TSEL0 1 0 :1:2 
+`uc 1 P6TSEL1 1 0 :1:3 
+]
+[u S424 . 1 `S416 1 . 1 0 `S419 1 . 1 0 ]
+[v _PWMTMRSbits PWMTMRSbits `VES424  1 e 1 @1567 ]
+"10816
+[v _NVMADRL NVMADRL `VEuc  1 e 1 @2193 ]
+"11068
+[v _NVMADRH NVMADRH `VEuc  1 e 1 @2194 ]
+"11318
+[v _NVMDATL NVMDATL `VEuc  1 e 1 @2195 ]
+[s S1206 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 NVMREGS 1 0 :1:6 
+]
+"11815
+[s S1214 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CFGS 1 0 :1:6 
+]
+[u S1217 . 1 `S1206 1 . 1 0 `S1214 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES1217  1 e 1 @2197 ]
+"11975
+[v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2198 ]
+[s S87 . 1 `uc 1 NDIV 1 0 :4:0 
+`uc 1 NOSC 1 0 :3:4 
+]
+"12506
+[s S90 . 1 `uc 1 NDIV0 1 0 :1:0 
+`uc 1 NDIV1 1 0 :1:1 
+`uc 1 NDIV2 1 0 :1:2 
+`uc 1 NDIV3 1 0 :1:3 
+`uc 1 NOSC0 1 0 :1:4 
+`uc 1 NOSC1 1 0 :1:5 
+`uc 1 NOSC2 1 0 :1:6 
+]
+[u S98 . 1 `S87 1 . 1 0 `S90 1 . 1 0 ]
+[v _OSCCON1bits OSCCON1bits `VES98  1 e 1 @2329 ]
+"12626
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2331 ]
+[s S132 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 ADOEN 1 0 :1:2 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 LFOEN 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 HFOEN 1 0 :1:6 
+`uc 1 EXTOEN 1 0 :1:7 
+]
+"12739
+[u S140 . 1 `S132 1 . 1 0 ]
+[v _OSCENbits OSCENbits `VES140  1 e 1 @2333 ]
+[s S169 . 1 `uc 1 HFTUN 1 0 :6:0 
+]
+"12787
+[s S171 . 1 `uc 1 HFTUN0 1 0 :1:0 
+`uc 1 HFTUN1 1 0 :1:1 
+`uc 1 HFTUN2 1 0 :1:2 
+`uc 1 HFTUN3 1 0 :1:3 
+`uc 1 HFTUN4 1 0 :1:4 
+`uc 1 HFTUN5 1 0 :1:5 
+]
+[u S178 . 1 `S169 1 . 1 0 `S171 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES178  1 e 1 @2334 ]
+[s S151 . 1 `uc 1 HFFRQ 1 0 :4:0 
+]
+"12843
+[s S153 . 1 `uc 1 HFFRQ0 1 0 :1:0 
+`uc 1 HFFRQ1 1 0 :1:1 
+`uc 1 HFFRQ2 1 0 :1:2 
+`uc 1 HFFRQ3 1 0 :1:3 
+]
+[u S158 . 1 `S151 1 . 1 0 `S153 1 . 1 0 ]
+[v _OSCFRQbits OSCFRQbits `VES158  1 e 1 @2335 ]
+"12873
+[v _PPSLOCK PPSLOCK `VEuc  1 e 1 @3599 ]
+[s S822 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
+]
+"12883
+[u S824 . 1 `S822 1 . 1 0 ]
+[v _PPSLOCKbits PPSLOCKbits `VES824  1 e 1 @3599 ]
+"13049
+[v _T1GPPS T1GPPS `VEuc  1 e 1 @3603 ]
+"14273
+[v _RA0PPS RA0PPS `VEuc  1 e 1 @3728 ]
+"14533
+[v _RB4PPS RB4PPS `VEuc  1 e 1 @3740 ]
+"14741
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @3744 ]
+"33 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _step_bright step_bright `[5]uc  1 s 5 step_bright ]
+"34
+[v _max_bright max_bright `[5]ui  1 s 10 max_bright ]
+[s S949 . 2 `uc 1 mRcvKey 1 0 :1:0 
+`uc 1 mRptKey 1 0 :1:1 
+`uc 1 mRsv 1 0 :6:2 
+`uc 1 mState 1 1 ]
+"36
+[v _m_ir_state m_ir_state `S949  1 s 2 m_ir_state ]
+"37
+[v _KeyValue KeyValue `uc  1 s 1 KeyValue ]
+"9 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_load_duty led_load_duty `[5]*.37(v  1 s 10 led_load_duty ]
+"13
+[v app_led@max_bright max_bright `[5]ui  1 s 10 max_bright ]
+[s S1071 . 51 `uc 1 mOn 1 0 :1:0 
+`uc 1 mState 1 0 :7:1 
+`[5]ui 1 mBright 10 1 `[4][5]ui 1 mCustomBirght 40 11 ]
+"14
+[v _m_led_para m_led_para `S1071  1 s 51 m_led_para ]
+[s S1076 . 21 `uc 1 mNoticeStatus 1 0 :1:0 
+`uc 1 mStartNotice 1 0 :1:1 
+`uc 1 mNoticeCount 1 0 :6:2 
+`[5]ui 1 mCurrentBright 10 1 `[5]ui 1 mTargetBright 10 11 ]
+"15
+[v _m_led_run_para m_led_run_para `S1076  1 s 21 m_led_run_para ]
+"62 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v _tmr1_gate_isr_cb tmr1_gate_isr_cb `*.37(v  1 e 2 0 ]
+"4 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[v _tmr2_isr_cb tmr2_isr_cb `*.37(v  1 e 2 0 ]
+"42 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"58
+} 0
+"45 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_para_init led_para_init `(v  1 e 1 0 ]
+{
+"60
+[v led_para_init@j j `uc  1 a 1 16 ]
+"59
+[v led_para_init@i_1144 i `uc  1 a 1 14 ]
+"53
+[v led_para_init@i i `uc  1 a 1 15 ]
+"66
+} 0
+"39 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_eeprom.c
+[v _eeprom_read_buffer eeprom_read_buffer `(v  1 e 1 0 ]
+{
+"41
+[v eeprom_read_buffer@i i `uc  1 a 1 6 ]
+"39
+[v eeprom_read_buffer@addr addr `ui  1 p 2 2 ]
+[v eeprom_read_buffer@pbuf pbuf `*.4uc  1 p 1 4 ]
+[v eeprom_read_buffer@len len `uc  1 p 1 5 ]
+"44
+} 0
+"22
+[v _eeprom_read_byte eeprom_read_byte `(uc  1 e 1 0 ]
+{
+[v eeprom_read_byte@addr addr `ui  1 p 2 0 ]
+"32
+} 0
+"82 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_tmr1_overflow_rest ir_tmr1_overflow_rest `(v  1 e 1 0 ]
+{
+"142
+} 0
+"106 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v _tmr1_stoptimer tmr1_stoptimer `(v  1 e 1 0 ]
+{
+"109
+} 0
+"119 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_get_state led_get_state `(uc  1 e 1 0 ]
+{
+"126
+} 0
+"336 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_action ir_action `(v  1 e 1 0 ]
+{
+"344
+} 0
+"107 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_save_para led_save_para `(v  1 e 1 0 ]
+{
+"110
+} 0
+"33 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_eeprom.c
+[v _eeprom_write_buffer eeprom_write_buffer `(v  1 e 1 0 ]
+{
+"35
+[v eeprom_write_buffer@i i `uc  1 a 1 8 ]
+"33
+[v eeprom_write_buffer@addr addr `ui  1 p 2 4 ]
+[v eeprom_write_buffer@pbuf pbuf `*.4uc  1 p 1 6 ]
+[v eeprom_write_buffer@len len `uc  1 p 1 7 ]
+"38
+} 0
+"3
+[v _eeprom_write_byte eeprom_write_byte `(v  1 e 1 0 ]
+{
+"5
+[v eeprom_write_byte@state state `uc  1 a 1 3 ]
+"3
+[v eeprom_write_byte@addr addr `ui  1 p 2 0 ]
+[v eeprom_write_byte@byte byte `uc  1 p 1 2 ]
+"21
+} 0
+"273 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_short_action ir_short_action `(v  1 s 1 ir_short_action ]
+{
+"275
+[v ir_short_action@idx idx `uc  1 a 1 13 ]
+"335
+} 0
+"131 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_toggle led_toggle `(v  1 e 1 0 ]
+{
+"134
+} 0
+"135
+[v _led_setcolour led_setcolour `(v  1 e 1 0 ]
+{
+[v led_setcolour@chn chn `uc  1 a 1 wreg ]
+"137
+[v led_setcolour@i i `uc  1 a 1 3 ]
+"135
+[v led_setcolour@chn chn `uc  1 a 1 wreg ]
+[v led_setcolour@max max `ui  1 p 2 0 ]
+"137
+[v led_setcolour@chn chn `uc  1 a 1 2 ]
+"143
+} 0
+"111
+[v _led_set_state led_set_state `(v  1 e 1 0 ]
+{
+[v led_set_state@idx idx `uc  1 a 1 wreg ]
+[v led_set_state@idx idx `uc  1 a 1 wreg ]
+"113
+[v led_set_state@idx idx `uc  1 a 1 1 ]
+"114
+} 0
+"144
+[v _led_set_increase_bright led_set_increase_bright `(v  1 e 1 0 ]
+{
+[v led_set_increase_bright@chn chn `uc  1 a 1 wreg ]
+[v led_set_increase_bright@chn chn `uc  1 a 1 wreg ]
+[v led_set_increase_bright@step step `uc  1 p 1 8 ]
+[v led_set_increase_bright@max max `ui  1 p 2 9 ]
+"146
+[v led_set_increase_bright@chn chn `uc  1 a 1 11 ]
+"148
+} 0
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_util.c
+[v _util_increase util_increase `(v  1 e 1 0 ]
+{
+[v util_increase@src src `*.4ui  1 a 1 wreg ]
+[v util_increase@src src `*.4ui  1 a 1 wreg ]
+[v util_increase@step step `uc  1 p 1 0 ]
+[v util_increase@max max `ui  1 p 2 1 ]
+"5
+[v util_increase@src src `*.4ui  1 a 1 7 ]
+"10
+} 0
+"149 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_set_decrease_bright led_set_decrease_bright `(v  1 e 1 0 ]
+{
+[v led_set_decrease_bright@chn chn `uc  1 a 1 wreg ]
+[v led_set_decrease_bright@chn chn `uc  1 a 1 wreg ]
+[v led_set_decrease_bright@step step `uc  1 p 1 8 ]
+[v led_set_decrease_bright@min min `ui  1 p 2 9 ]
+"151
+[v led_set_decrease_bright@chn chn `uc  1 a 1 11 ]
+"153
+} 0
+"11 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_util.c
+[v _util_decrease util_decrease `(v  1 e 1 0 ]
+{
+[v util_decrease@src src `*.4ui  1 a 1 wreg ]
+[v util_decrease@src src `*.4ui  1 a 1 wreg ]
+[v util_decrease@step step `uc  1 p 1 0 ]
+[v util_decrease@min min `ui  1 p 2 1 ]
+"13
+[v util_decrease@src src `*.4ui  1 a 1 7 ]
+"18
+} 0
+"154 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_set_custom_bright led_set_custom_bright `(v  1 e 1 0 ]
+{
+[v led_set_custom_bright@chn chn `uc  1 a 1 wreg ]
+"156
+[v led_set_custom_bright@i i `uc  1 a 1 7 ]
+"154
+[v led_set_custom_bright@chn chn `uc  1 a 1 wreg ]
+"156
+[v led_set_custom_bright@chn chn `uc  1 a 1 6 ]
+"160
+} 0
+"4 D:\Program Files\Microchip\xc8\v1.44\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 1 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 2 ]
+"51
+} 0
+"67 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_init led_init `(v  1 e 1 0 ]
+{
+"106
+} 0
+"33
+[v _led_turnon_ramp led_turnon_ramp `(v  1 s 1 led_turnon_ramp ]
+{
+"35
+[v led_turnon_ramp@i i `uc  1 a 1 0 ]
+"38
+} 0
+"39
+[v _led_turnoff_ramp led_turnoff_ramp `(v  1 s 1 led_turnoff_ramp ]
+{
+"41
+[v led_turnoff_ramp@i i `uc  1 a 1 0 ]
+"44
+} 0
+"127
+[v _led_get_power_state led_get_power_state `(uc  1 e 1 0 ]
+{
+"130
+} 0
+"115
+[v _led_clear_state led_clear_state `(v  1 e 1 0 ]
+{
+"118
+} 0
+"39 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_get_index ir_get_index `(uc  1 s 1 ir_get_index ]
+{
+[v ir_get_index@keynum keynum `uc  1 a 1 wreg ]
+"41
+[v ir_get_index@index index `uc  1 a 1 1 ]
+"39
+[v ir_get_index@keynum keynum `uc  1 a 1 wreg ]
+"41
+[v ir_get_index@keynum keynum `uc  1 a 1 0 ]
+"81
+} 0
+"67 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_main.c
+[v _app_init app_init `(v  1 e 1 0 ]
+{
+"95
+} 0
+"17 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[v _tmr2_starttimer tmr2_starttimer `(v  1 e 1 0 ]
+{
+"20
+} 0
+"13
+[v _tmr2_reload tmr2_reload `(v  1 e 1 0 ]
+{
+[v tmr2_reload@value value `uc  1 a 1 wreg ]
+[v tmr2_reload@value value `uc  1 a 1 wreg ]
+"15
+[v tmr2_reload@value value `uc  1 a 1 0 ]
+"16
+} 0
+"5
+[v _tmr2_init tmr2_init `(v  1 e 1 0 ]
+{
+[v tmr2_init@ckps ckps `E8237  1 a 1 wreg ]
+[v tmr2_init@ckps ckps `E8237  1 a 1 wreg ]
+[v tmr2_init@outps outps `E8243  1 p 1 0 ]
+[v tmr2_init@cb cb `*.37(v  1 p 2 1 ]
+"7
+[v tmr2_init@ckps ckps `E8237  1 a 1 4 ]
+"12
+} 0
+"25
+[v _tmr2_enabled_isr tmr2_enabled_isr `(v  1 e 1 0 ]
+{
+"28
+} 0
+"77 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v _tmr1_writetimer tmr1_writetimer `(v  1 e 1 0 ]
+{
+[v tmr1_writetimer@value value `ui  1 p 2 0 ]
+"88
+} 0
+"102
+[v _tmr1_starttimer tmr1_starttimer `(v  1 e 1 0 ]
+{
+"105
+} 0
+"63
+[v _tmr1_init tmr1_init `(v  1 e 1 0 ]
+{
+[v tmr1_init@cs cs `E8242  1 a 1 wreg ]
+[v tmr1_init@cs cs `E8242  1 a 1 wreg ]
+[v tmr1_init@ckps ckps `E8248  1 p 1 0 ]
+[v tmr1_init@src src `E8254  1 p 1 1 ]
+[v tmr1_init@cb cb `*.37(v  1 p 2 2 ]
+"65
+[v tmr1_init@cs cs `E8242  1 a 1 5 ]
+"76
+} 0
+"110
+[v _tmr1_gate_enabled_isr tmr1_gate_enabled_isr `(v  1 e 1 0 ]
+{
+"113
+} 0
+"76 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_pwm.c
+[v _pwm5_init pwm5_init `(v  1 e 1 0 ]
+{
+[v pwm5_init@port port `E8106  1 a 1 wreg ]
+[v pwm5_init@port port `E8106  1 a 1 wreg ]
+[v pwm5_init@pin pin `E8111  1 p 1 9 ]
+[v pwm5_init@src src `E8240  1 p 1 10 ]
+"78
+[v pwm5_init@port port `E8106  1 a 1 11 ]
+"84
+} 0
+"58
+[v _pwm4_init pwm4_init `(v  1 e 1 0 ]
+{
+[v pwm4_init@port port `E8106  1 a 1 wreg ]
+[v pwm4_init@port port `E8106  1 a 1 wreg ]
+[v pwm4_init@pin pin `E8111  1 p 1 9 ]
+[v pwm4_init@src src `E8240  1 p 1 10 ]
+"60
+[v pwm4_init@port port `E8106  1 a 1 12 ]
+"68
+} 0
+"40
+[v _pwm3_init pwm3_init `(v  1 e 1 0 ]
+{
+[v pwm3_init@port port `E8106  1 a 1 wreg ]
+[v pwm3_init@port port `E8106  1 a 1 wreg ]
+[v pwm3_init@pin pin `E8111  1 p 1 9 ]
+[v pwm3_init@src src `E8240  1 p 1 10 ]
+"42
+[v pwm3_init@port port `E8106  1 a 1 12 ]
+"50
+} 0
+"22
+[v _pwm2_init pwm2_init `(v  1 e 1 0 ]
+{
+[v pwm2_init@port port `E8106  1 a 1 wreg ]
+[v pwm2_init@port port `E8106  1 a 1 wreg ]
+[v pwm2_init@pin pin `E8111  1 p 1 9 ]
+[v pwm2_init@src src `E8240  1 p 1 10 ]
+"24
+[v pwm2_init@port port `E8106  1 a 1 12 ]
+"32
+} 0
+"4
+[v _pwm1_init pwm1_init `(v  1 e 1 0 ]
+{
+[v pwm1_init@port port `E8106  1 a 1 wreg ]
+[v pwm1_init@port port `E8106  1 a 1 wreg ]
+[v pwm1_init@pin pin `E8111  1 p 1 9 ]
+[v pwm1_init@src src `E8240  1 p 1 10 ]
+"6
+[v pwm1_init@port port `E8106  1 a 1 11 ]
+"14
+} 0
+"37 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_gpio.c
+[v _gpio_set_outputpps gpio_set_outputpps `(v  1 e 1 0 ]
+{
+[v gpio_set_outputpps@port port `E7835  1 a 1 wreg ]
+[v gpio_set_outputpps@port port `E7835  1 a 1 wreg ]
+[v gpio_set_outputpps@pin pin `E7840  1 p 1 0 ]
+[v gpio_set_outputpps@outputpps outputpps `E7857  1 p 1 1 ]
+[v gpio_set_outputpps@port port `E7835  1 a 1 8 ]
+"52
+} 0
+"3
+[v _gpio_set gpio_set `(v  1 e 1 0 ]
+{
+[v gpio_set@port port `E7835  1 a 1 wreg ]
+"6
+[v gpio_set@mask mask `uc  1 a 1 5 ]
+"5
+[v gpio_set@offset offset `uc  1 a 1 4 ]
+"3
+[v gpio_set@port port `E7835  1 a 1 wreg ]
+[v gpio_set@pin pin `E7840  1 p 1 0 ]
+[v gpio_set@state state `E7850  1 p 1 1 ]
+"5
+[v gpio_set@port port `E7835  1 a 1 3 ]
+"36
+} 0
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_osc.c
+[v _osc_init osc_init `(v  1 e 1 0 ]
+{
+"20
+} 0
+"53 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_gpio.c
+[v _gpio_set_intputpps gpio_set_intputpps `(uc  1 e 1 0 ]
+{
+[v gpio_set_intputpps@port port `E7835  1 a 1 wreg ]
+[v gpio_set_intputpps@port port `E7835  1 a 1 wreg ]
+[v gpio_set_intputpps@pin pin `E7840  1 p 1 0 ]
+"55
+[v gpio_set_intputpps@port port `E7835  1 a 1 1 ]
+"56
+} 0
+"59 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_main.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"66
+} 0
+"33 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[v _tmr2_isr tmr2_isr `(v  1 e 1 0 ]
+{
+"39
+} 0
+"206 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_run led_run `(v  1 e 1 0 ]
+{
+"208
+[v led_run@cnt cnt `uc  1 s 1 cnt ]
+"220
+} 0
+"193
+[v _led_ramp led_ramp `(v  1 e 1 0 ]
+{
+"195
+[v led_ramp@i i `uc  1 a 1 10 ]
+"205
+} 0
+"69 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_pwm.c
+[v _pwm4_load_duty pwm4_load_duty `(v  1 e 1 0 ]
+{
+[v pwm4_load_duty@duty duty `ui  1 p 2 0 ]
+"73
+} 0
+"51
+[v _pwm3_load_duty pwm3_load_duty `(v  1 e 1 0 ]
+{
+[v pwm3_load_duty@duty duty `ui  1 p 2 0 ]
+"55
+} 0
+"33
+[v _pwm2_load_duty pwm2_load_duty `(v  1 e 1 0 ]
+{
+[v pwm2_load_duty@duty duty `ui  1 p 2 0 ]
+"37
+} 0
+"15
+[v _pwm1_load_duty pwm1_load_duty `(v  1 e 1 0 ]
+{
+[v pwm1_load_duty@duty duty `ui  1 p 2 0 ]
+"19
+} 0
+"85
+[v _pwm5_load_duty pwm5_load_duty `(v  1 e 1 0 ]
+{
+[v pwm5_load_duty@duty duty `ui  1 p 2 0 ]
+"89
+} 0
+"172 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_notice led_notice `(v  1 s 1 led_notice ]
+{
+"174
+[v led_notice@cnt cnt `ui  1 s 2 cnt ]
+"192
+} 0
+"17
+[v _led_turnon_direct led_turnon_direct `(v  1 e 1 0 ]
+{
+"24
+} 0
+"25
+[v _led_turnoff_direct led_turnoff_direct `(v  1 e 1 0 ]
+{
+"32
+} 0
+"219 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_long_action ir_long_action `(v  1 e 1 0 ]
+{
+"221
+[v ir_long_action@idx idx `uc  1 a 1 12 ]
+"223
+[v ir_long_action@cnt cnt `ui  1 s 2 cnt ]
+"272
+} 0
+"144 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v i1_led_set_increase_bright led_set_increase_bright `(v  1 e 1 0 ]
+{
+[v i1led_set_increase_bright@chn chn `uc  1 a 1 wreg ]
+[v i1led_set_increase_bright@chn chn `uc  1 a 1 wreg ]
+[v i1led_set_increase_bright@step step `uc  1 p 1 8 ]
+[v i1led_set_increase_bright@max max `ui  1 p 2 9 ]
+"146
+[v i1led_set_increase_bright@chn chn `uc  1 a 1 11 ]
+"148
+} 0
+"3 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_util.c
+[v i1_util_increase util_increase `(v  1 e 1 0 ]
+{
+[v i1util_increase@src src `*.4ui  1 a 1 wreg ]
+[v i1util_increase@src src `*.4ui  1 a 1 wreg ]
+[v i1util_increase@step step `uc  1 p 1 0 ]
+[v i1util_increase@max max `ui  1 p 2 1 ]
+"5
+[v i1util_increase@src src `*.4ui  1 a 1 7 ]
+"10
+} 0
+"149 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v i1_led_set_decrease_bright led_set_decrease_bright `(v  1 e 1 0 ]
+{
+[v i1led_set_decrease_bright@chn chn `uc  1 a 1 wreg ]
+[v i1led_set_decrease_bright@chn chn `uc  1 a 1 wreg ]
+[v i1led_set_decrease_bright@step step `uc  1 p 1 8 ]
+[v i1led_set_decrease_bright@min min `ui  1 p 2 9 ]
+"151
+[v i1led_set_decrease_bright@chn chn `uc  1 a 1 11 ]
+"153
+} 0
+"11 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_util.c
+[v i1_util_decrease util_decrease `(v  1 e 1 0 ]
+{
+[v i1util_decrease@src src `*.4ui  1 a 1 wreg ]
+[v i1util_decrease@src src `*.4ui  1 a 1 wreg ]
+[v i1util_decrease@step step `uc  1 p 1 0 ]
+[v i1util_decrease@min min `ui  1 p 2 1 ]
+"13
+[v i1util_decrease@src src `*.4ui  1 a 1 7 ]
+"18
+} 0
+"119 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v i1_led_get_state led_get_state `(uc  1 e 1 0 ]
+{
+"126
+} 0
+"39 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v i1_ir_get_index ir_get_index `(uc  1 s 1 i1_ir_get_index ]
+{
+[v i1ir_get_index@keynum keynum `uc  1 a 1 wreg ]
+[v i1ir_get_index@index ir_get_index `uc  1 a 1 1 ]
+[v i1ir_get_index@keynum keynum `uc  1 a 1 wreg ]
+"41
+[v i1ir_get_index@keynum keynum `uc  1 a 1 0 ]
+"81
+} 0
+"167 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v _led_startnotice led_startnotice `(v  1 e 1 0 ]
+{
+[v led_startnotice@cnt cnt `uc  1 a 1 wreg ]
+[v led_startnotice@cnt cnt `uc  1 a 1 wreg ]
+"169
+[v led_startnotice@cnt cnt `uc  1 a 1 1 ]
+"171
+} 0
+"161
+[v _led_set_custom led_set_custom `(v  1 e 1 0 ]
+{
+[v led_set_custom@chn chn `uc  1 a 1 wreg ]
+"163
+[v led_set_custom@i i `uc  1 a 1 7 ]
+"161
+[v led_set_custom@chn chn `uc  1 a 1 wreg ]
+"163
+[v led_set_custom@chn chn `uc  1 a 1 6 ]
+"166
+} 0
+"4 D:\Program Files\Microchip\xc8\v1.44\sources\common\Umul8.c
+[v i1___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v i1___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v i1___bmul@product __bmul `uc  1 a 1 2 ]
+[v i1___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v i1___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v i1___bmul@multiplier multiplier `uc  1 a 1 1 ]
+"51
+} 0
+"118 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v _tmr1_gate_isr tmr1_gate_isr `(v  1 e 1 0 ]
+{
+"125
+} 0
+"143 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_ir.c
+[v _ir_decode ir_decode `(v  1 e 1 0 ]
+{
+"150
+[v ir_decode@hVal hVal `ui  1 a 2 12 ]
+"145
+[v ir_decode@keyNum keyNum `uc  1 a 1 11 ]
+"146
+[v ir_decode@reKeyNum reKeyNum `uc  1 a 1 10 ]
+"147
+[v ir_decode@nBit nBit `uc  1 s 1 nBit ]
+"148
+[v ir_decode@rptCnt rptCnt `uc  1 s 1 rptCnt ]
+"149
+[v ir_decode@codeVal codeVal `ui  1 s 2 codeVal ]
+"218
+} 0
+"25 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[v i1_tmr2_enabled_isr tmr2_enabled_isr `(v  1 e 1 0 ]
+{
+"28
+} 0
+"77 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v i1_tmr1_writetimer tmr1_writetimer `(v  1 e 1 0 ]
+{
+[v i1tmr1_writetimer@value value `ui  1 p 2 0 ]
+"88
+} 0
+"127 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/app_led.c
+[v i1_led_get_power_state led_get_power_state `(uc  1 e 1 0 ]
+{
+"130
+} 0
+"29 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr2xx.c
+[v _tmr2_disabled_isr tmr2_disabled_isr `(v  1 e 1 0 ]
+{
+"32
+} 0
+"89 E:\Work\Program\279-ZensuiLedPlus\ZensuiPlus.X\src/drv_tmr1xx.c
+[v _tmr1_readtimer tmr1_readtimer `(ui  1 e 2 0 ]
+{
+"91
+[v tmr1_readtimer@readVal readVal `ui  1 a 2 2 ]
+"93
+[v tmr1_readtimer@readValLow readValLow `uc  1 a 1 5 ]
+"92
+[v tmr1_readtimer@readValHigh readValHigh `uc  1 a 1 4 ]
+"101
+} 0
