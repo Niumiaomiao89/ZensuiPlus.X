@@ -10,13 +10,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S30 . . ]
 "362
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"61 src/../inc/app_led.h
+"62 src/../inc/app_led.h
 [v _led_para_init `(v ~T0 @X0 0 ef ]
-"62
+"63
 [v _led_init `(v ~T0 @X0 0 ef ]
-"52 src/../inc/app_ir.h
+"55 src/../inc/app_ir.h
 [v _ir_tmr1_overflow_rest `(v ~T0 @X0 0 ef ]
-"55
+"58
 [v _ir_action `(v ~T0 @X0 0 ef ]
 "1733 D:\Program Files\Microchip\xc8\v1.44\include\pic16f18345.h
 [s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -86,7 +86,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F8223 `(v ~T0 @X0 0 tf ]
 "50 src/../inc/drv_tmr1xx.h
 [v _tmr1_init `(v ~T0 @X0 0 ef4`E8204`E8210`E8216`*F8223 ]
-"53 src/../inc/app_ir.h
+"56 src/../inc/app_ir.h
 [v _ir_decode `(v ~T0 @X0 0 ef ]
 "51 src/../inc/drv_tmr1xx.h
 [v _tmr1_writetimer `(v ~T0 @X0 0 ef1`ui ]
@@ -102,7 +102,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F8262 `(v ~T0 @X0 0 tf ]
 "46 src/../inc/drv_tmr2xx.h
 [v _tmr2_init `(v ~T0 @X0 0 ef3`E8237`E8243`*F8262 ]
-"78 src/../inc/app_led.h
+"80 src/../inc/app_led.h
 [v _led_run `(v ~T0 @X0 0 ef ]
 "47 src/../inc/drv_tmr2xx.h
 [v _tmr2_reload `(v ~T0 @X0 0 ef1`uc ]
@@ -7914,41 +7914,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_ioc.h: 20: extern void ioc_enabled_isr();
 [; ;drv_ioc.h: 21: extern void ioc_disabled_isr();
 [; ;drv_ioc.h: 22: extern void ioc_isr();
-[; ;app_ir.h: 52: extern void ir_tmr1_overflow_rest();
-[; ;app_ir.h: 53: extern void ir_decode();
-[; ;app_ir.h: 54: extern void ir_long_action();
-[; ;app_ir.h: 55: extern void ir_action();
-[; ;app_led.h: 43: typedef struct {
-[; ;app_led.h: 45: unsigned mOn :1;
-[; ;app_led.h: 46: unsigned mState :7;
-[; ;app_led.h: 48: uint16_t mBright[5];
-[; ;app_led.h: 49: uint16_t mCustomBirght[4][5];
-[; ;app_led.h: 50: }led_para_t;
-[; ;app_led.h: 52: typedef struct {
-[; ;app_led.h: 53: unsigned mNoticeStatus :1;
-[; ;app_led.h: 54: unsigned mStartNotice :1;
-[; ;app_led.h: 55: unsigned mNoticeCount :6;
-[; ;app_led.h: 57: uint16_t mCurrentBright[5];
-[; ;app_led.h: 58: uint16_t mTargetBright[5];
-[; ;app_led.h: 59: }led_run_para_t;
-[; ;app_led.h: 61: extern void led_para_init();
-[; ;app_led.h: 62: extern void led_init();
-[; ;app_led.h: 63: extern void led_save_para();
-[; ;app_led.h: 64: extern void led_set_state(uint8_t idx);
-[; ;app_led.h: 65: extern void led_clear_state();
-[; ;app_led.h: 66: extern bool led_get_state();
-[; ;app_led.h: 67: extern bool led_get_power_state();
-[; ;app_led.h: 68: extern void led_turnon_direct();
-[; ;app_led.h: 69: extern void led_turnoff_direct();
-[; ;app_led.h: 70: extern void led_toggle();
-[; ;app_led.h: 71: extern void led_setcolour(uint8_t chn,uint16_t max);
-[; ;app_led.h: 72: extern void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max);
-[; ;app_led.h: 73: extern void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min);
-[; ;app_led.h: 74: extern void led_set_custom_bright(uint8_t chn);
-[; ;app_led.h: 75: extern void led_set_custom(uint8_t chn);
-[; ;app_led.h: 76: extern void led_startnotice(uint8_t cnt);
-[; ;app_led.h: 77: extern void led_ramp();
-[; ;app_led.h: 78: extern void led_run();
+[; ;app_ir.h: 55: extern void ir_tmr1_overflow_rest();
+[; ;app_ir.h: 56: extern void ir_decode();
+[; ;app_ir.h: 57: extern void ir_long_action();
+[; ;app_ir.h: 58: extern void ir_action();
+[; ;app_led.h: 44: typedef struct {
+[; ;app_led.h: 46: unsigned mOn :1;
+[; ;app_led.h: 47: unsigned mState :7;
+[; ;app_led.h: 49: uint16_t mBright[5];
+[; ;app_led.h: 50: uint16_t mCustomBirght[3][5];
+[; ;app_led.h: 51: }led_para_t;
+[; ;app_led.h: 53: typedef struct {
+[; ;app_led.h: 54: unsigned mNoticeStatus :1;
+[; ;app_led.h: 55: unsigned mStartNotice :1;
+[; ;app_led.h: 56: unsigned mNoticeCount :6;
+[; ;app_led.h: 58: uint16_t mCurrentBright[5];
+[; ;app_led.h: 59: uint16_t mTargetBright[5];
+[; ;app_led.h: 60: }led_run_para_t;
+[; ;app_led.h: 62: extern void led_para_init();
+[; ;app_led.h: 63: extern void led_init();
+[; ;app_led.h: 64: extern void led_save_para();
+[; ;app_led.h: 65: extern void led_set_static_mode(uint8_t idx);
+[; ;app_led.h: 66: extern void led_clear_static_mode();
+[; ;app_led.h: 67: extern bool get_static_mode_state();
+[; ;app_led.h: 68: extern bool led_get_power_state();
+[; ;app_led.h: 69: extern void led_turnon_direct();
+[; ;app_led.h: 70: extern void led_turnoff_direct();
+[; ;app_led.h: 71: extern void led_turnon();
+[; ;app_led.h: 72: extern void led_turnoff();
+[; ;app_led.h: 73: extern void led_setcolour(uint8_t chn,uint16_t max);
+[; ;app_led.h: 74: extern void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max);
+[; ;app_led.h: 75: extern void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min);
+[; ;app_led.h: 76: extern void led_read_custom_bright(uint8_t chn);
+[; ;app_led.h: 77: extern void led_set_custom_bright(uint8_t chn);
+[; ;app_led.h: 78: extern void led_startnotice(uint8_t cnt);
+[; ;app_led.h: 79: extern void led_ramp();
+[; ;app_led.h: 80: extern void led_run();
 "15 src/app_main.c
 [p x FEXTOSC=OFF ]
 "16
@@ -8033,9 +8034,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 965 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-[v F8355 `(v ~T0 @X0 1 tf ]
+[v F8356 `(v ~T0 @X0 1 tf ]
 "59
-[v _ISR `IF8355 ~T0 @X0 1 e ]
+[v _ISR `IF8356 ~T0 @X0 1 e ]
 {
 [; ;app_main.c: 59: void interrupt ISR() {
 [e :U _ISR ]

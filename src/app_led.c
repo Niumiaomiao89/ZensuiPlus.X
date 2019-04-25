@@ -46,7 +46,7 @@ void led_para_init() {
     
     eeprom_read_buffer(LEDPARA_EEPROM_ADDR,(uint8_t *)&m_led_para,sizeof(m_led_para));
     
-    if((m_led_para.mState != STATE_PRESS_1) && (m_led_para.mState != STATE_PRESS_2) && (m_led_para.mState != STATE_PRESS_3) && (m_led_para.mState != STATE_PRESS_4)) {
+    if((m_led_para.mState != STATIC_MODE_1) && (m_led_para.mState != STATIC_MODE_2) && (m_led_para.mState != STATIC_MODE_3) && (m_led_para.mState != STATIC_MODE_4) && (m_led_para.mState != STATIC_MODE_5)) {
         m_led_para.mState = 0;
     }
     
@@ -69,33 +69,38 @@ void led_init() {
     if(m_led_para.mOn) {
         led_turnon_ramp();
         switch(m_led_para.mState) {
-            case STATE_PRESS_1:
+            case STATIC_MODE_1:
                 m_led_run_para.mTargetBright[0] = 1000;
                 m_led_run_para.mTargetBright[1] = 1000;
-                m_led_run_para.mTargetBright[2] = 200;
+                m_led_run_para.mTargetBright[2] = 300;
                 m_led_run_para.mTargetBright[3] = 300;
                 m_led_run_para.mTargetBright[4] = 200;
                 break;
-            case STATE_PRESS_2:
-                m_led_run_para.mTargetBright[0] = 700;
-                m_led_run_para.mTargetBright[1] = 500;
-                m_led_run_para.mTargetBright[2] = 1000;
-                m_led_run_para.mTargetBright[3] = 0;
-                m_led_run_para.mTargetBright[4] = 0;
-                break;
-            case STATE_PRESS_3:
+            case STATIC_MODE_2:
                 m_led_run_para.mTargetBright[0] = 0;
                 m_led_run_para.mTargetBright[1] = 500;
                 m_led_run_para.mTargetBright[2] = 0;
                 m_led_run_para.mTargetBright[3] = 500;
                 m_led_run_para.mTargetBright[4] = 500;
                 break;
-            case STATE_PRESS_4:
+            case STATIC_MODE_3:
                 m_led_run_para.mTargetBright[0] = 0;
                 m_led_run_para.mTargetBright[1] = 0;
                 m_led_run_para.mTargetBright[2] = 1000;
                 m_led_run_para.mTargetBright[3] = 500;
                 m_led_run_para.mTargetBright[4] = 0;
+                break;
+            case STATIC_MODE_4:
+                m_led_run_para.mTargetBright[0] = 700;
+                m_led_run_para.mTargetBright[1] = 500;
+                m_led_run_para.mTargetBright[2] = 1000;
+                m_led_run_para.mTargetBright[3] = 0;
+                m_led_run_para.mTargetBright[4] = 0;
+                break;
+            case STATIC_MODE_5:
+                for(uint8_t i = 0; i < CHANNLE_COUNT; i++) {
+                    m_led_run_para.mTargetBright[i] = max_bright[i];
+                }
                 break;
             default:
                 break;
@@ -108,18 +113,18 @@ void led_save_para() {
     
     eeprom_write_buffer(LEDPARA_EEPROM_ADDR,(uint8_t *)&m_led_para,sizeof(m_led_para));
 }
-void led_set_state(uint8_t idx) {
+void led_set_static_mode(uint8_t idx) {
     
     m_led_para.mState = idx;
 }
-void led_clear_state() {
+void led_clear_static_mode() {
     
     m_led_para.mState = 0;
 }
-bool led_get_state() {
+bool get_static_mode_state() {
     
-    if(m_led_para.mState == STATE_PRESS_1 || m_led_para.mState == STATE_PRESS_2 || m_led_para.mState == STATE_PRESS_3 ||
-            m_led_para.mState == STATE_PRESS_4) {
+    if(m_led_para.mState == STATIC_MODE_1 || m_led_para.mState == STATIC_MODE_2 || m_led_para.mState == STATIC_MODE_3 ||
+            m_led_para.mState == STATIC_MODE_4 || m_led_para.mState == STATIC_MODE_5) {
         return true;
     }
     return false;
@@ -128,9 +133,13 @@ bool led_get_power_state() {
     
     return m_led_para.mOn;
 }
-void led_toggle() {
+void led_turnon() {
     
-    m_led_para.mOn = !m_led_para.mOn;
+    m_led_para.mOn = 1;
+}
+void led_turnoff() {
+    
+    m_led_para.mOn = 0;
 }
 void led_setcolour(uint8_t chn,uint16_t max) {
     
@@ -151,14 +160,14 @@ void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min) {
     util_decrease(&m_led_para.mBright[chn],step,min);
     m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
 }
-void led_set_custom_bright(uint8_t chn) {
+void led_read_custom_bright(uint8_t chn) {
     
     for(uint8_t i = 0; i < CHANNLE_COUNT; i++) {
         m_led_para.mBright[i] = m_led_para.mCustomBirght[chn][i];
         m_led_run_para.mTargetBright[i] = m_led_para.mBright[i];
     }
 }
-void led_set_custom(uint8_t chn) {
+void led_set_custom_bright(uint8_t chn) {
     
     for(uint8_t i = 0; i < CHANNLE_COUNT; i++) {
         m_led_para.mCustomBirght[chn][i] =  m_led_para.mBright[i];

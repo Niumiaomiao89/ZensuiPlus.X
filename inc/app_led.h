@@ -15,8 +15,8 @@ extern "C" {
 #include "drv_common.h"
     
 #define CHANNLE_COUNT               5
-#define CUSTOM_COUNT                4
-#define STEP_NORMAL_BRIGHT          2
+#define CUSTOM_COUNT                3
+#define STEP_NORMAL_BRIGHT          1
 #define STEP_LONG_BRIGHT            4
 //#define STEP_SHORT_BRIGHT           100
    
@@ -33,10 +33,11 @@ extern "C" {
 #define MAX_LED_BRIGHT_COLD         750
 #define MIN_LED_BRIGHT              0
    
-#define STATE_PRESS_1               0x01
-#define STATE_PRESS_2               0x02
-#define STATE_PRESS_3               0x04
-#define STATE_PRESS_4               0x08
+#define STATIC_MODE_1               0x01
+#define STATIC_MODE_2               0x02
+#define STATIC_MODE_3               0x04
+#define STATIC_MODE_4               0x08
+#define STATIC_MODE_5               0x10
     
 #define LEDPARA_EEPROM_ADDR         0x7010
     
@@ -61,18 +62,19 @@ extern "C" {
     extern void led_para_init();
     extern void led_init();
     extern void led_save_para();
-    extern void led_set_state(uint8_t idx);
-    extern void led_clear_state();
-    extern bool led_get_state();
+    extern void led_set_static_mode(uint8_t idx);
+    extern void led_clear_static_mode();
+    extern bool get_static_mode_state();
     extern bool led_get_power_state();
     extern void led_turnon_direct();
     extern void led_turnoff_direct();
-    extern void led_toggle();
+    extern void led_turnon();
+    extern void led_turnoff();
     extern void led_setcolour(uint8_t chn,uint16_t max);
     extern void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max);
     extern void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min);
+    extern void led_read_custom_bright(uint8_t chn);
     extern void led_set_custom_bright(uint8_t chn);
-    extern void led_set_custom(uint8_t chn);
     extern void led_startnotice(uint8_t cnt);
     extern void led_ramp();
     extern void led_run();

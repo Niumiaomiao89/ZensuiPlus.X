@@ -10,11 +10,11 @@
 
 #define RPT_COUNT               4
 
-#define IR_STATE_VALUE_MAX      2500
-#define IR_STATE_VALUE_MIN      2000
-#define IR_HIGH_VALUE_MAX       960
+#define IR_STATE_VALUE_MAX      2750
+#define IR_STATE_VALUE_MIN      1750
+#define IR_HIGH_VALUE_MAX       1000
 #define IR_HIGH_VALUE_MIN       720
-#define IR_LOW_VALUE_MAX        340
+#define IR_LOW_VALUE_MAX        400
 #define IR_LOW_VALUE_MIN        220
 #define IR_RPT_VALUE_MAX        1250
 #define IR_RPT_VALUE_MIN        1000
@@ -63,7 +63,6 @@ static uint8_t ir_get_index(uint8_t keynum) {
             index = 2;
             break;
         case KEY_W1:
-        case KEY_M4:
         case KEYW1_UP:
         case KEYW1_DOWN:
         case KEY_PRESS4:
@@ -72,6 +71,7 @@ static uint8_t ir_get_index(uint8_t keynum) {
         case KEY_W2:
         case KEYW2_UP:
         case KEYW2_DOWN:
+        case KEY_PRESS5:
             index = 4;
             break;
         default:
@@ -103,7 +103,6 @@ void ir_tmr1_overflow_rest() {
                 case KEY_M1:
                 case KEY_M2:
                 case KEY_M3:
-                case KEY_M4:
                     led_save_para();
                     break;
                 default:
@@ -122,14 +121,13 @@ void ir_tmr1_overflow_rest() {
                 case KEYW1_DOWN:
                 case KEYW2_UP:
                 case KEYW2_DOWN:
-                    if(!led_get_state()) {
+                    if(!get_static_mode_state()) {
                         m_ir_state.mRcvKey = 1;
                     }
                     break;
                 case KEY_M1:
                 case KEY_M2:
                 case KEY_M3:
-                case KEY_M4:
                     m_ir_state.mRcvKey = 1;
                     break;
                 default:
@@ -182,7 +180,7 @@ void ir_decode() {
                     if(keyNum ^ reKeyNum == 0xFF) {
                         KeyValue = keyNum;
                         if(led_get_power_state()) {
-                            if(KeyValue == KEY_M1 || KeyValue == KEY_M2 || KeyValue == KEY_M3 || KeyValue == KEY_M4 || KeyValue == KEYR_UP || KeyValue == KEYR_DOWN ||
+                            if(KeyValue == KEY_M1 || KeyValue == KEY_M2 || KeyValue == KEY_M3 || KeyValue == KEYR_UP || KeyValue == KEYR_DOWN ||
                                 KeyValue == KEYG_UP || KeyValue == KEYG_DOWN || KeyValue == KEYB_UP || KeyValue == KEYB_DOWN ||
                                 KeyValue == KEYW1_UP || KeyValue == KEYW1_DOWN || KeyValue == KEYW2_UP || KeyValue == KEYW2_DOWN) {
                                 rptCnt = 0;
@@ -192,7 +190,7 @@ void ir_decode() {
                                 m_ir_state.mState = STATE_IDLE;
                             }
                         } else {
-                            if(KeyValue == KEY_ONOFF) {
+                            if(KeyValue == KEY_ON) {
                                 m_ir_state.mRcvKey = 1;
                                 m_ir_state.mState = STATE_IDLE;
                             }
@@ -225,7 +223,7 @@ void ir_long_action() {
     if(!m_ir_state.mRptKey) {
         return ;
     }
-    if(led_get_state()) {
+    if(get_static_mode_state()) {
         return ;
     }
     
@@ -257,12 +255,11 @@ void ir_long_action() {
         case KEY_M1:
         case KEY_M2:
         case KEY_M3:
-        case KEY_M4:
             cnt ++;
             if(cnt == SETTIME) {
                 cnt = 0;
                 idx = ir_get_index(KeyValue);
-                led_set_custom(idx);
+                led_set_custom_bright(idx);
                 led_startnotice(NOTICE_CUSTOM_SET);
             }
             break;
@@ -275,8 +272,12 @@ static void ir_short_action() {
     uint8_t idx = 0xFF;
     
     switch(KeyValue) {
-        case KEY_ONOFF:
-            led_toggle();
+        case KEY_ON:
+            led_turnon();
+            led_init();
+            break;
+        case KEY_0FF:
+            led_turnoff();
             led_init();
             break;
         case KEY_R:
@@ -287,7 +288,7 @@ static void ir_short_action() {
             if(led_get_power_state()) {
                 idx = ir_get_index(KeyValue);
                 led_setcolour(idx,max_bright[idx]);
-                led_clear_state();
+                led_clear_static_mode();
             }
             break;
         case KEYR_UP:
@@ -314,19 +315,19 @@ static void ir_short_action() {
         case KEY_PRESS2:
         case KEY_PRESS3:
         case KEY_PRESS4:
+        case KEY_PRESS5:
             idx = ir_get_index(KeyValue);
             idx = 1 << idx;
-            led_set_state(idx);   
+            led_set_static_mode(idx);   
             led_init();
             break;
         case KEY_M1:
         case KEY_M2:
         case KEY_M3:
-        case KEY_M4:
             if(led_get_power_state()) {
                 idx = ir_get_index(KeyValue);
-                led_set_custom_bright(idx);
-                led_clear_state();
+                led_read_custom_bright(idx);
+                led_clear_static_mode();
             }
             break;
         default:

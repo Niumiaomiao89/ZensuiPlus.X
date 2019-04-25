@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F8345 `(v ~T0 @X0 0 tf1`ui ]
+[v F8346 `(v ~T0 @X0 0 tf1`ui ]
 "29 src/../inc/drv_pwm.h
 [v _pwm2_load_duty `(v ~T0 @X0 0 ef1`ui ]
 "25
@@ -11,10 +11,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "41
 [v _pwm5_load_duty `(v ~T0 @X0 0 ef1`ui ]
 [v F8293 `ui ~T0 @X0 -> 5 `i t ]
-"43 src/../inc/app_led.h
-[s S963 :1 `uc 1 :7 `uc 1 `ui -> 5 `i `F8293 -> 4 `i ]
+"44 src/../inc/app_led.h
+[s S963 :1 `uc 1 :7 `uc 1 `ui -> 5 `i `F8293 -> 3 `i ]
 [n S963 . mOn mState mBright mCustomBirght ]
-"52
+"53
 [s S964 :1 `uc 1 :1 `uc 1 :6 `uc 1 `ui -> 5 `i `ui -> 5 `i ]
 [n S964 . mNoticeStatus mStartNotice mNoticeCount mCurrentBright mTargetBright ]
 "6392 D:\Program Files\Microchip\xc8\v1.44\include\pic16f18345.h
@@ -35,7 +35,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _util_increase `(v ~T0 @X0 0 ef3`*ui`uc`ui ]
 "18
 [v _util_decrease `(v ~T0 @X0 0 ef3`*ui`uc`ui ]
-"54 src/../inc/app_ir.h
+"57 src/../inc/app_ir.h
 [v _ir_long_action `(v ~T0 @X0 0 ef ]
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -7819,46 +7819,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;drv_eeprom.h: 18: extern uint8_t eeprom_read_byte(uint16_t addr);
 [; ;drv_eeprom.h: 19: extern void eeprom_write_buffer(uint16_t addr,uint8_t *pbuf,uint8_t len);
 [; ;drv_eeprom.h: 20: extern void eeprom_read_buffer(uint16_t addr,uint8_t *pbuf,uint8_t len);
-[; ;app_led.h: 43: typedef struct {
-[; ;app_led.h: 45: unsigned mOn :1;
-[; ;app_led.h: 46: unsigned mState :7;
-[; ;app_led.h: 48: uint16_t mBright[5];
-[; ;app_led.h: 49: uint16_t mCustomBirght[4][5];
-[; ;app_led.h: 50: }led_para_t;
-[; ;app_led.h: 52: typedef struct {
-[; ;app_led.h: 53: unsigned mNoticeStatus :1;
-[; ;app_led.h: 54: unsigned mStartNotice :1;
-[; ;app_led.h: 55: unsigned mNoticeCount :6;
-[; ;app_led.h: 57: uint16_t mCurrentBright[5];
-[; ;app_led.h: 58: uint16_t mTargetBright[5];
-[; ;app_led.h: 59: }led_run_para_t;
-[; ;app_led.h: 61: extern void led_para_init();
-[; ;app_led.h: 62: extern void led_init();
-[; ;app_led.h: 63: extern void led_save_para();
-[; ;app_led.h: 64: extern void led_set_state(uint8_t idx);
-[; ;app_led.h: 65: extern void led_clear_state();
-[; ;app_led.h: 66: extern bool led_get_state();
-[; ;app_led.h: 67: extern bool led_get_power_state();
-[; ;app_led.h: 68: extern void led_turnon_direct();
-[; ;app_led.h: 69: extern void led_turnoff_direct();
-[; ;app_led.h: 70: extern void led_toggle();
-[; ;app_led.h: 71: extern void led_setcolour(uint8_t chn,uint16_t max);
-[; ;app_led.h: 72: extern void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max);
-[; ;app_led.h: 73: extern void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min);
-[; ;app_led.h: 74: extern void led_set_custom_bright(uint8_t chn);
-[; ;app_led.h: 75: extern void led_set_custom(uint8_t chn);
-[; ;app_led.h: 76: extern void led_startnotice(uint8_t cnt);
-[; ;app_led.h: 77: extern void led_ramp();
-[; ;app_led.h: 78: extern void led_run();
+[; ;app_led.h: 44: typedef struct {
+[; ;app_led.h: 46: unsigned mOn :1;
+[; ;app_led.h: 47: unsigned mState :7;
+[; ;app_led.h: 49: uint16_t mBright[5];
+[; ;app_led.h: 50: uint16_t mCustomBirght[3][5];
+[; ;app_led.h: 51: }led_para_t;
+[; ;app_led.h: 53: typedef struct {
+[; ;app_led.h: 54: unsigned mNoticeStatus :1;
+[; ;app_led.h: 55: unsigned mStartNotice :1;
+[; ;app_led.h: 56: unsigned mNoticeCount :6;
+[; ;app_led.h: 58: uint16_t mCurrentBright[5];
+[; ;app_led.h: 59: uint16_t mTargetBright[5];
+[; ;app_led.h: 60: }led_run_para_t;
+[; ;app_led.h: 62: extern void led_para_init();
+[; ;app_led.h: 63: extern void led_init();
+[; ;app_led.h: 64: extern void led_save_para();
+[; ;app_led.h: 65: extern void led_set_static_mode(uint8_t idx);
+[; ;app_led.h: 66: extern void led_clear_static_mode();
+[; ;app_led.h: 67: extern bool get_static_mode_state();
+[; ;app_led.h: 68: extern bool led_get_power_state();
+[; ;app_led.h: 69: extern void led_turnon_direct();
+[; ;app_led.h: 70: extern void led_turnoff_direct();
+[; ;app_led.h: 71: extern void led_turnon();
+[; ;app_led.h: 72: extern void led_turnoff();
+[; ;app_led.h: 73: extern void led_setcolour(uint8_t chn,uint16_t max);
+[; ;app_led.h: 74: extern void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max);
+[; ;app_led.h: 75: extern void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min);
+[; ;app_led.h: 76: extern void led_read_custom_bright(uint8_t chn);
+[; ;app_led.h: 77: extern void led_set_custom_bright(uint8_t chn);
+[; ;app_led.h: 78: extern void led_startnotice(uint8_t cnt);
+[; ;app_led.h: 79: extern void led_ramp();
+[; ;app_led.h: 80: extern void led_run();
 [; ;app_util.h: 17: extern void util_increase(uint16_t *src,uint8_t step,uint16_t max);
 [; ;app_util.h: 18: extern void util_decrease(uint16_t *src,uint8_t step,uint16_t min);
-[; ;app_ir.h: 52: extern void ir_tmr1_overflow_rest();
-[; ;app_ir.h: 53: extern void ir_decode();
-[; ;app_ir.h: 54: extern void ir_long_action();
-[; ;app_ir.h: 55: extern void ir_action();
+[; ;app_ir.h: 55: extern void ir_tmr1_overflow_rest();
+[; ;app_ir.h: 56: extern void ir_decode();
+[; ;app_ir.h: 57: extern void ir_long_action();
+[; ;app_ir.h: 58: extern void ir_action();
 [; ;app_led.c: 6: typedef void (*led_load_duty_func_t)(uint16_t value);
 "9 src/app_led.c
-[v _led_load_duty `*F8345 ~T0 @X0 -> 5 `i s ]
+[v _led_load_duty `*F8346 ~T0 @X0 -> 5 `i s ]
 [i _led_load_duty
 :U ..
 "10
@@ -8012,9 +8013,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;app_led.c: 47: eeprom_read_buffer(0x7010,(uint8_t *)&m_led_para,sizeof(m_led_para));
 "47
 [e ( _eeprom_read_buffer (3 , , -> -> 28688 `i `ui -> &U _m_led_para `*uc -> -> # _m_led_para `ui `uc ]
-[; ;app_led.c: 49: if((m_led_para.mState != 0x01) && (m_led_para.mState != 0x02) && (m_led_para.mState != 0x04) && (m_led_para.mState != 0x08)) {
+[; ;app_led.c: 49: if((m_led_para.mState != 0x01) && (m_led_para.mState != 0x02) && (m_led_para.mState != 0x04) && (m_led_para.mState != 0x08) && (m_led_para.mState != 0x10)) {
 "49
-[e $ ! && && && != -> . _m_led_para 1 `i -> 1 `i != -> . _m_led_para 1 `i -> 2 `i != -> . _m_led_para 1 `i -> 4 `i != -> . _m_led_para 1 `i -> 8 `i 976  ]
+[e $ ! && && && && != -> . _m_led_para 1 `i -> 1 `i != -> . _m_led_para 1 `i -> 2 `i != -> . _m_led_para 1 `i -> 4 `i != -> . _m_led_para 1 `i -> 8 `i != -> . _m_led_para 1 `i -> 16 `i 976  ]
 {
 [; ;app_led.c: 50: m_led_para.mState = 0;
 "50
@@ -8052,12 +8053,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [; ;app_led.c: 56: }
 [; ;app_led.c: 57: }
-[; ;app_led.c: 59: for(uint8_t i = 0; i < 4; i++) {
+[; ;app_led.c: 59: for(uint8_t i = 0; i < 3; i++) {
 "59
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 981  ]
+[e $ < -> _i `i -> 3 `i 981  ]
 [e $U 982  ]
 [e :U 981 ]
 {
@@ -8092,7 +8093,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "59
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 981  ]
+[e $ < -> _i `i -> 3 `i 981  ]
 [e :U 982 ]
 "65
 }
@@ -8129,9 +8130,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;app_led.c: 74: m_led_run_para.mTargetBright[1] = 1000;
 "74
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 1000 `i `ui ]
-[; ;app_led.c: 75: m_led_run_para.mTargetBright[2] = 200;
+[; ;app_led.c: 75: m_led_run_para.mTargetBright[2] = 300;
 "75
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 200 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 300 `i `ui ]
 [; ;app_led.c: 76: m_led_run_para.mTargetBright[3] = 300;
 "76
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 300 `i `ui ]
@@ -8144,21 +8145,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;app_led.c: 79: case 0x02:
 "79
 [e :U 993 ]
-[; ;app_led.c: 80: m_led_run_para.mTargetBright[0] = 700;
+[; ;app_led.c: 80: m_led_run_para.mTargetBright[0] = 0;
 "80
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 700 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
 [; ;app_led.c: 81: m_led_run_para.mTargetBright[1] = 500;
 "81
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
-[; ;app_led.c: 82: m_led_run_para.mTargetBright[2] = 1000;
+[; ;app_led.c: 82: m_led_run_para.mTargetBright[2] = 0;
 "82
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 1000 `i `ui ]
-[; ;app_led.c: 83: m_led_run_para.mTargetBright[3] = 0;
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
+[; ;app_led.c: 83: m_led_run_para.mTargetBright[3] = 500;
 "83
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
-[; ;app_led.c: 84: m_led_run_para.mTargetBright[4] = 0;
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
+[; ;app_led.c: 84: m_led_run_para.mTargetBright[4] = 500;
 "84
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
 [; ;app_led.c: 85: break;
 "85
 [e $U 990  ]
@@ -8168,51 +8169,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;app_led.c: 87: m_led_run_para.mTargetBright[0] = 0;
 "87
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
-[; ;app_led.c: 88: m_led_run_para.mTargetBright[1] = 500;
+[; ;app_led.c: 88: m_led_run_para.mTargetBright[1] = 0;
 "88
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
-[; ;app_led.c: 89: m_led_run_para.mTargetBright[2] = 0;
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
+[; ;app_led.c: 89: m_led_run_para.mTargetBright[2] = 1000;
 "89
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 1000 `i `ui ]
 [; ;app_led.c: 90: m_led_run_para.mTargetBright[3] = 500;
 "90
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
-[; ;app_led.c: 91: m_led_run_para.mTargetBright[4] = 500;
+[; ;app_led.c: 91: m_led_run_para.mTargetBright[4] = 0;
 "91
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
 [; ;app_led.c: 92: break;
 "92
 [e $U 990  ]
 [; ;app_led.c: 93: case 0x08:
 "93
 [e :U 995 ]
-[; ;app_led.c: 94: m_led_run_para.mTargetBright[0] = 0;
+[; ;app_led.c: 94: m_led_run_para.mTargetBright[0] = 700;
 "94
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
-[; ;app_led.c: 95: m_led_run_para.mTargetBright[1] = 0;
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 700 `i `ui ]
+[; ;app_led.c: 95: m_led_run_para.mTargetBright[1] = 500;
 "95
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
 [; ;app_led.c: 96: m_led_run_para.mTargetBright[2] = 1000;
 "96
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 1000 `i `ui ]
-[; ;app_led.c: 97: m_led_run_para.mTargetBright[3] = 500;
+[; ;app_led.c: 97: m_led_run_para.mTargetBright[3] = 0;
 "97
-[e = *U + &U . _m_led_run_para 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 500 `i `ui ]
+[e = *U + &U . _m_led_run_para 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
 [; ;app_led.c: 98: m_led_run_para.mTargetBright[4] = 0;
 "98
 [e = *U + &U . _m_led_run_para 4 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
 [; ;app_led.c: 99: break;
 "99
 [e $U 990  ]
-[; ;app_led.c: 100: default:
+[; ;app_led.c: 100: case 0x10:
 "100
 [e :U 996 ]
-[; ;app_led.c: 101: break;
+[; ;app_led.c: 101: for(uint8_t i = 0; i < 5; i++) {
 "101
-[e $U 990  ]
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 997  ]
+[e $U 998  ]
+[e :U 997 ]
+{
+[; ;app_led.c: 102: m_led_run_para.mTargetBright[i] = max_bright[i];
 "102
+[e = *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux *U + &U _max_bright * -> _i `ux -> -> # *U &U _max_bright `ui `ux ]
+"103
 }
-[; ;app_led.c: 102: }
+"101
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 997  ]
+[e :U 998 ]
+"103
+}
+[; ;app_led.c: 103: }
+[; ;app_led.c: 104: break;
+"104
+[e $U 990  ]
+[; ;app_led.c: 105: default:
+"105
+[e :U 1000 ]
+[; ;app_led.c: 106: break;
+"106
+[e $U 990  ]
+"107
+}
+[; ;app_led.c: 107: }
 [e $U 990  ]
 "71
 [e :U 991 ]
@@ -8220,472 +8248,486 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 2 `i `uc 993
  , $ -> -> 4 `i `uc 994
  , $ -> -> 8 `i `uc 995
- 996 ]
-"102
+ , $ -> -> 16 `i `uc 996
+ 1000 ]
+"107
 [e :U 990 ]
-"103
+"108
 }
-[; ;app_led.c: 103: } else {
-[e $U 997  ]
+[; ;app_led.c: 108: } else {
+[e $U 1001  ]
 [e :U 989 ]
 {
-[; ;app_led.c: 104: led_turnoff_ramp();
-"104
+[; ;app_led.c: 109: led_turnoff_ramp();
+"109
 [e ( _led_turnoff_ramp ..  ]
-"105
+"110
 }
-[e :U 997 ]
-[; ;app_led.c: 105: }
-[; ;app_led.c: 106: }
-"106
+[e :U 1001 ]
+[; ;app_led.c: 110: }
+[; ;app_led.c: 111: }
+"111
 [e :UE 988 ]
 }
-"107
+"112
 [v _led_save_para `(v ~T0 @X0 1 ef ]
 {
-[; ;app_led.c: 107: void led_save_para() {
+[; ;app_led.c: 112: void led_save_para() {
 [e :U _led_save_para ]
 [f ]
-[; ;app_led.c: 109: eeprom_write_buffer(0x7010,(uint8_t *)&m_led_para,sizeof(m_led_para));
-"109
+[; ;app_led.c: 114: eeprom_write_buffer(0x7010,(uint8_t *)&m_led_para,sizeof(m_led_para));
+"114
 [e ( _eeprom_write_buffer (3 , , -> -> 28688 `i `ui -> &U _m_led_para `*uc -> -> # _m_led_para `ui `uc ]
-[; ;app_led.c: 110: }
-"110
-[e :UE 998 ]
+[; ;app_led.c: 115: }
+"115
+[e :UE 1002 ]
 }
-"111
-[v _led_set_state `(v ~T0 @X0 1 ef1`uc ]
+"116
+[v _led_set_static_mode `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;app_led.c: 111: void led_set_state(uint8_t idx) {
-[e :U _led_set_state ]
+[; ;app_led.c: 116: void led_set_static_mode(uint8_t idx) {
+[e :U _led_set_static_mode ]
 [v _idx `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;app_led.c: 113: m_led_para.mState = idx;
-"113
-[e = . _m_led_para 1 _idx ]
-[; ;app_led.c: 114: }
-"114
-[e :UE 999 ]
-}
-"115
-[v _led_clear_state `(v ~T0 @X0 1 ef ]
-{
-[; ;app_led.c: 115: void led_clear_state() {
-[e :U _led_clear_state ]
-[f ]
-[; ;app_led.c: 117: m_led_para.mState = 0;
-"117
-[e = . _m_led_para 1 -> -> 0 `i `uc ]
-[; ;app_led.c: 118: }
+[; ;app_led.c: 118: m_led_para.mState = idx;
 "118
-[e :UE 1000 ]
-}
+[e = . _m_led_para 1 _idx ]
+[; ;app_led.c: 119: }
 "119
-[v _led_get_state `(uc ~T0 @X0 1 ef ]
-{
-[; ;app_led.c: 119: bool led_get_state() {
-[e :U _led_get_state ]
-[f ]
-[; ;app_led.c: 121: if(m_led_para.mState == 0x01 || m_led_para.mState == 0x02 || m_led_para.mState == 0x04 ||
-[; ;app_led.c: 122: m_led_para.mState == 0x08) {
-"122
-[e $ ! || || || == -> . _m_led_para 1 `i -> 1 `i == -> . _m_led_para 1 `i -> 2 `i == -> . _m_led_para 1 `i -> 4 `i == -> . _m_led_para 1 `i -> 8 `i 1002  ]
-{
-[; ;app_led.c: 123: return 1;
-"123
-[e ) -> -> 1 `i `uc ]
-[e $UE 1001  ]
-"124
-}
-[e :U 1002 ]
-[; ;app_led.c: 124: }
-[; ;app_led.c: 125: return 0;
-"125
-[e ) -> -> 0 `i `uc ]
-[e $UE 1001  ]
-[; ;app_led.c: 126: }
-"126
-[e :UE 1001 ]
-}
-"127
-[v _led_get_power_state `(uc ~T0 @X0 1 ef ]
-{
-[; ;app_led.c: 127: bool led_get_power_state() {
-[e :U _led_get_power_state ]
-[f ]
-[; ;app_led.c: 129: return m_led_para.mOn;
-"129
-[e ) . _m_led_para 0 ]
-[e $UE 1003  ]
-[; ;app_led.c: 130: }
-"130
 [e :UE 1003 ]
 }
-"131
-[v _led_toggle `(v ~T0 @X0 1 ef ]
+"120
+[v _led_clear_static_mode `(v ~T0 @X0 1 ef ]
 {
-[; ;app_led.c: 131: void led_toggle() {
-[e :U _led_toggle ]
+[; ;app_led.c: 120: void led_clear_static_mode() {
+[e :U _led_clear_static_mode ]
 [f ]
-[; ;app_led.c: 133: m_led_para.mOn = !m_led_para.mOn;
-"133
-[e = . _m_led_para 0 -> -> ! != -> . _m_led_para 0 `i -> -> -> 0 `i `uc `i `i `uc ]
-[; ;app_led.c: 134: }
-"134
+[; ;app_led.c: 122: m_led_para.mState = 0;
+"122
+[e = . _m_led_para 1 -> -> 0 `i `uc ]
+[; ;app_led.c: 123: }
+"123
 [e :UE 1004 ]
 }
+"124
+[v _get_static_mode_state `(uc ~T0 @X0 1 ef ]
+{
+[; ;app_led.c: 124: bool get_static_mode_state() {
+[e :U _get_static_mode_state ]
+[f ]
+[; ;app_led.c: 126: if(m_led_para.mState == 0x01 || m_led_para.mState == 0x02 || m_led_para.mState == 0x04 ||
+[; ;app_led.c: 127: m_led_para.mState == 0x08 || m_led_para.mState == 0x10) {
+"127
+[e $ ! || || || || == -> . _m_led_para 1 `i -> 1 `i == -> . _m_led_para 1 `i -> 2 `i == -> . _m_led_para 1 `i -> 4 `i == -> . _m_led_para 1 `i -> 8 `i == -> . _m_led_para 1 `i -> 16 `i 1006  ]
+{
+[; ;app_led.c: 128: return 1;
+"128
+[e ) -> -> 1 `i `uc ]
+[e $UE 1005  ]
+"129
+}
+[e :U 1006 ]
+[; ;app_led.c: 129: }
+[; ;app_led.c: 130: return 0;
+"130
+[e ) -> -> 0 `i `uc ]
+[e $UE 1005  ]
+[; ;app_led.c: 131: }
+"131
+[e :UE 1005 ]
+}
+"132
+[v _led_get_power_state `(uc ~T0 @X0 1 ef ]
+{
+[; ;app_led.c: 132: bool led_get_power_state() {
+[e :U _led_get_power_state ]
+[f ]
+[; ;app_led.c: 134: return m_led_para.mOn;
+"134
+[e ) . _m_led_para 0 ]
+[e $UE 1007  ]
+[; ;app_led.c: 135: }
 "135
+[e :UE 1007 ]
+}
+"136
+[v _led_turnon `(v ~T0 @X0 1 ef ]
+{
+[; ;app_led.c: 136: void led_turnon() {
+[e :U _led_turnon ]
+[f ]
+[; ;app_led.c: 138: m_led_para.mOn = 1;
+"138
+[e = . _m_led_para 0 -> -> 1 `i `uc ]
+[; ;app_led.c: 139: }
+"139
+[e :UE 1008 ]
+}
+"140
+[v _led_turnoff `(v ~T0 @X0 1 ef ]
+{
+[; ;app_led.c: 140: void led_turnoff() {
+[e :U _led_turnoff ]
+[f ]
+[; ;app_led.c: 142: m_led_para.mOn = 0;
+"142
+[e = . _m_led_para 0 -> -> 0 `i `uc ]
+[; ;app_led.c: 143: }
+"143
+[e :UE 1009 ]
+}
+"144
 [v _led_setcolour `(v ~T0 @X0 1 ef2`uc`ui ]
 {
-[; ;app_led.c: 135: void led_setcolour(uint8_t chn,uint16_t max) {
+[; ;app_led.c: 144: void led_setcolour(uint8_t chn,uint16_t max) {
 [e :U _led_setcolour ]
 [v _chn `uc ~T0 @X0 1 r1 ]
 [v _max `ui ~T0 @X0 1 r2 ]
 [f ]
-[; ;app_led.c: 137: for(uint8_t i = 0; i < 5; i++) {
-"137
+[; ;app_led.c: 146: for(uint8_t i = 0; i < 5; i++) {
+"146
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1006  ]
-[e $U 1007  ]
-[e :U 1006 ]
+[e $ < -> _i `i -> 5 `i 1011  ]
+[e $U 1012  ]
+[e :U 1011 ]
 {
-[; ;app_led.c: 138: m_led_para.mBright[i] = 0;
-"138
+[; ;app_led.c: 147: m_led_para.mBright[i] = 0;
+"147
 [e = *U + &U . _m_led_para 2 * -> _i `ux -> -> # *U &U . _m_led_para 2 `ui `ux -> -> 0 `i `ui ]
-[; ;app_led.c: 139: m_led_run_para.mTargetBright[i] = 0;
-"139
+[; ;app_led.c: 148: m_led_run_para.mTargetBright[i] = 0;
+"148
 [e = *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 0 `i `ui ]
-"140
+"149
 }
-"137
+"146
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1006  ]
-[e :U 1007 ]
-"140
+[e $ < -> _i `i -> 5 `i 1011  ]
+[e :U 1012 ]
+"149
 }
-[; ;app_led.c: 140: }
-[; ;app_led.c: 141: m_led_para.mBright[chn] = max;
-"141
+[; ;app_led.c: 149: }
+[; ;app_led.c: 150: m_led_para.mBright[chn] = max;
+"150
 [e = *U + &U . _m_led_para 2 * -> _chn `ux -> -> # *U &U . _m_led_para 2 `ui `ux _max ]
-[; ;app_led.c: 142: m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
-"142
+[; ;app_led.c: 151: m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
+"151
 [e = *U + &U . _m_led_run_para 4 * -> _chn `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux *U + &U . _m_led_para 2 * -> _chn `ux -> -> # *U &U . _m_led_para 2 `ui `ux ]
-[; ;app_led.c: 143: }
-"143
-[e :UE 1005 ]
+[; ;app_led.c: 152: }
+"152
+[e :UE 1010 ]
 }
-"144
+"153
 [v _led_set_increase_bright `(v ~T0 @X0 1 ef3`uc`uc`ui ]
 {
-[; ;app_led.c: 144: void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max) {
+[; ;app_led.c: 153: void led_set_increase_bright(uint8_t chn,uint8_t step,uint16_t max) {
 [e :U _led_set_increase_bright ]
 [v _chn `uc ~T0 @X0 1 r1 ]
 [v _step `uc ~T0 @X0 1 r2 ]
 [v _max `ui ~T0 @X0 1 r3 ]
 [f ]
-[; ;app_led.c: 146: util_increase(&m_led_para.mBright[chn],step,max);
-"146
+[; ;app_led.c: 155: util_increase(&m_led_para.mBright[chn],step,max);
+"155
 [e ( _util_increase (3 , , &U *U + &U . _m_led_para 2 * -> _chn `ux -> -> # *U &U . _m_led_para 2 `ui `ux _step _max ]
-[; ;app_led.c: 147: m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
-"147
+[; ;app_led.c: 156: m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
+"156
 [e = *U + &U . _m_led_run_para 4 * -> _chn `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux *U + &U . _m_led_para 2 * -> _chn `ux -> -> # *U &U . _m_led_para 2 `ui `ux ]
-[; ;app_led.c: 148: }
-"148
-[e :UE 1009 ]
+[; ;app_led.c: 157: }
+"157
+[e :UE 1014 ]
 }
-"149
+"158
 [v _led_set_decrease_bright `(v ~T0 @X0 1 ef3`uc`uc`ui ]
 {
-[; ;app_led.c: 149: void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min) {
+[; ;app_led.c: 158: void led_set_decrease_bright(uint8_t chn,uint8_t step,uint16_t min) {
 [e :U _led_set_decrease_bright ]
 [v _chn `uc ~T0 @X0 1 r1 ]
 [v _step `uc ~T0 @X0 1 r2 ]
 [v _min `ui ~T0 @X0 1 r3 ]
 [f ]
-[; ;app_led.c: 151: util_decrease(&m_led_para.mBright[chn],step,min);
-"151
+[; ;app_led.c: 160: util_decrease(&m_led_para.mBright[chn],step,min);
+"160
 [e ( _util_decrease (3 , , &U *U + &U . _m_led_para 2 * -> _chn `ux -> -> # *U &U . _m_led_para 2 `ui `ux _step _min ]
-[; ;app_led.c: 152: m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
-"152
+[; ;app_led.c: 161: m_led_run_para.mTargetBright[chn] = m_led_para.mBright[chn];
+"161
 [e = *U + &U . _m_led_run_para 4 * -> _chn `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux *U + &U . _m_led_para 2 * -> _chn `ux -> -> # *U &U . _m_led_para 2 `ui `ux ]
-[; ;app_led.c: 153: }
-"153
-[e :UE 1010 ]
+[; ;app_led.c: 162: }
+"162
+[e :UE 1015 ]
 }
-"154
+"163
+[v _led_read_custom_bright `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;app_led.c: 163: void led_read_custom_bright(uint8_t chn) {
+[e :U _led_read_custom_bright ]
+[v _chn `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;app_led.c: 165: for(uint8_t i = 0; i < 5; i++) {
+"165
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 1017  ]
+[e $U 1018  ]
+[e :U 1017 ]
+{
+[; ;app_led.c: 166: m_led_para.mBright[i] = m_led_para.mCustomBirght[chn][i];
+"166
+[e = *U + &U . _m_led_para 2 * -> _i `ux -> -> # *U &U . _m_led_para 2 `ui `ux *U + &U *U + &U . _m_led_para 3 * -> _chn `ux -> * -> # *U &U *U &U . _m_led_para 3 `ui -> -> 5 `i `ui `ux * -> _i `ux -> -> # *U &U *U + &U . _m_led_para 3 * -> _chn `ux -> * -> # *U &U *U &U . _m_led_para 3 `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;app_led.c: 167: m_led_run_para.mTargetBright[i] = m_led_para.mBright[i];
+"167
+[e = *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux *U + &U . _m_led_para 2 * -> _i `ux -> -> # *U &U . _m_led_para 2 `ui `ux ]
+"168
+}
+"165
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 1017  ]
+[e :U 1018 ]
+"168
+}
+[; ;app_led.c: 168: }
+[; ;app_led.c: 169: }
+"169
+[e :UE 1016 ]
+}
+"170
 [v _led_set_custom_bright `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;app_led.c: 154: void led_set_custom_bright(uint8_t chn) {
+[; ;app_led.c: 170: void led_set_custom_bright(uint8_t chn) {
 [e :U _led_set_custom_bright ]
 [v _chn `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;app_led.c: 156: for(uint8_t i = 0; i < 5; i++) {
-"156
+[; ;app_led.c: 172: for(uint8_t i = 0; i < 5; i++) {
+"172
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1012  ]
-[e $U 1013  ]
-[e :U 1012 ]
+[e $ < -> _i `i -> 5 `i 1021  ]
+[e $U 1022  ]
+[e :U 1021 ]
 {
-[; ;app_led.c: 157: m_led_para.mBright[i] = m_led_para.mCustomBirght[chn][i];
-"157
-[e = *U + &U . _m_led_para 2 * -> _i `ux -> -> # *U &U . _m_led_para 2 `ui `ux *U + &U *U + &U . _m_led_para 3 * -> _chn `ux -> * -> # *U &U *U &U . _m_led_para 3 `ui -> -> 5 `i `ui `ux * -> _i `ux -> -> # *U &U *U + &U . _m_led_para 3 * -> _chn `ux -> * -> # *U &U *U &U . _m_led_para 3 `ui -> -> 5 `i `ui `ux `ui `ux ]
-[; ;app_led.c: 158: m_led_run_para.mTargetBright[i] = m_led_para.mBright[i];
-"158
-[e = *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux *U + &U . _m_led_para 2 * -> _i `ux -> -> # *U &U . _m_led_para 2 `ui `ux ]
-"159
-}
-"156
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1012  ]
-[e :U 1013 ]
-"159
-}
-[; ;app_led.c: 159: }
-[; ;app_led.c: 160: }
-"160
-[e :UE 1011 ]
-}
-"161
-[v _led_set_custom `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;app_led.c: 161: void led_set_custom(uint8_t chn) {
-[e :U _led_set_custom ]
-[v _chn `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;app_led.c: 163: for(uint8_t i = 0; i < 5; i++) {
-"163
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1016  ]
-[e $U 1017  ]
-[e :U 1016 ]
-{
-[; ;app_led.c: 164: m_led_para.mCustomBirght[chn][i] = m_led_para.mBright[i];
-"164
+[; ;app_led.c: 173: m_led_para.mCustomBirght[chn][i] = m_led_para.mBright[i];
+"173
 [e = *U + &U *U + &U . _m_led_para 3 * -> _chn `ux -> * -> # *U &U *U &U . _m_led_para 3 `ui -> -> 5 `i `ui `ux * -> _i `ux -> -> # *U &U *U + &U . _m_led_para 3 * -> _chn `ux -> * -> # *U &U *U &U . _m_led_para 3 `ui -> -> 5 `i `ui `ux `ui `ux *U + &U . _m_led_para 2 * -> _i `ux -> -> # *U &U . _m_led_para 2 `ui `ux ]
-"165
+"174
 }
-"163
+"172
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1016  ]
-[e :U 1017 ]
-"165
+[e $ < -> _i `i -> 5 `i 1021  ]
+[e :U 1022 ]
+"174
 }
-[; ;app_led.c: 165: }
-[; ;app_led.c: 166: }
-"166
-[e :UE 1015 ]
+[; ;app_led.c: 174: }
+[; ;app_led.c: 175: }
+"175
+[e :UE 1020 ]
 }
-"167
+"176
 [v _led_startnotice `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;app_led.c: 167: void led_startnotice(uint8_t cnt) {
+[; ;app_led.c: 176: void led_startnotice(uint8_t cnt) {
 [e :U _led_startnotice ]
 [v _cnt `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;app_led.c: 169: m_led_run_para.mNoticeCount = cnt;
-"169
+[; ;app_led.c: 178: m_led_run_para.mNoticeCount = cnt;
+"178
 [e = . _m_led_run_para 2 _cnt ]
-[; ;app_led.c: 170: m_led_run_para.mStartNotice = 1;
-"170
+[; ;app_led.c: 179: m_led_run_para.mStartNotice = 1;
+"179
 [e = . _m_led_run_para 1 -> -> 1 `i `uc ]
-[; ;app_led.c: 171: }
-"171
-[e :UE 1019 ]
+[; ;app_led.c: 180: }
+"180
+[e :UE 1024 ]
 }
-"172
+"181
 [v _led_notice `(v ~T0 @X0 1 sf ]
 {
-[; ;app_led.c: 172: static void led_notice() {
+[; ;app_led.c: 181: static void led_notice() {
 [e :U _led_notice ]
 [f ]
-"174
-[v F8381 `ui ~T0 @X0 1 s cnt ]
-[i F8381
+"183
+[v F8383 `ui ~T0 @X0 1 s cnt ]
+[i F8383
 -> -> 0 `i `ui
 ]
-[; ;app_led.c: 174: static uint16_t cnt = 0;
-[; ;app_led.c: 176: if(m_led_run_para.mNoticeCount) {
-"176
-[e $ ! != -> . _m_led_run_para 2 `i -> -> -> 0 `i `uc `i 1021  ]
-{
-[; ;app_led.c: 177: cnt ++;
-"177
-[e ++ F8381 -> -> 1 `i `ui ]
-[; ;app_led.c: 178: if((cnt & 0x1FF) == 0x00) {
-"178
-[e $ ! == & F8381 -> -> 511 `i `ui -> -> 0 `i `ui 1022  ]
-{
-[; ;app_led.c: 179: if(m_led_run_para.mNoticeStatus) {
-"179
-[e $ ! != -> . _m_led_run_para 0 `i -> -> -> 0 `i `uc `i 1023  ]
-{
-[; ;app_led.c: 180: led_turnon_direct();
-"180
-[e ( _led_turnon_direct ..  ]
-[; ;app_led.c: 181: m_led_run_para.mNoticeCount --;
-"181
-[e -- . _m_led_run_para 2 -> -> 1 `i `uc ]
-[; ;app_led.c: 182: m_led_run_para.mNoticeStatus = 0;
-"182
-[e = . _m_led_run_para 0 -> -> 0 `i `uc ]
-"183
-}
-[; ;app_led.c: 183: } else {
-[e $U 1024  ]
-[e :U 1023 ]
-{
-[; ;app_led.c: 184: led_turnoff_direct();
-"184
-[e ( _led_turnoff_direct ..  ]
-[; ;app_led.c: 185: m_led_run_para.mNoticeStatus = 1;
+[; ;app_led.c: 183: static uint16_t cnt = 0;
+[; ;app_led.c: 185: if(m_led_run_para.mNoticeCount) {
 "185
-[e = . _m_led_run_para 0 -> -> 1 `i `uc ]
-"186
-}
-[e :U 1024 ]
-"187
-}
-[e :U 1022 ]
-"188
-}
-[; ;app_led.c: 186: }
-[; ;app_led.c: 187: }
-[; ;app_led.c: 188: } else {
-[e $U 1025  ]
-[e :U 1021 ]
+[e $ ! != -> . _m_led_run_para 2 `i -> -> -> 0 `i `uc `i 1026  ]
 {
-[; ;app_led.c: 189: m_led_run_para.mStartNotice = 0;
+[; ;app_led.c: 186: cnt ++;
+"186
+[e ++ F8383 -> -> 1 `i `ui ]
+[; ;app_led.c: 187: if((cnt & 0x1FF) == 0x00) {
+"187
+[e $ ! == & F8383 -> -> 511 `i `ui -> -> 0 `i `ui 1027  ]
+{
+[; ;app_led.c: 188: if(m_led_run_para.mNoticeStatus) {
+"188
+[e $ ! != -> . _m_led_run_para 0 `i -> -> -> 0 `i `uc `i 1028  ]
+{
+[; ;app_led.c: 189: led_turnon_direct();
 "189
-[e = . _m_led_run_para 1 -> -> 0 `i `uc ]
-[; ;app_led.c: 190: cnt = 0;
+[e ( _led_turnon_direct ..  ]
+[; ;app_led.c: 190: m_led_run_para.mNoticeCount --;
 "190
-[e = F8381 -> -> 0 `i `ui ]
+[e -- . _m_led_run_para 2 -> -> 1 `i `uc ]
+[; ;app_led.c: 191: m_led_run_para.mNoticeStatus = 0;
 "191
-}
-[e :U 1025 ]
-[; ;app_led.c: 191: }
-[; ;app_led.c: 192: }
+[e = . _m_led_run_para 0 -> -> 0 `i `uc ]
 "192
-[e :UE 1020 ]
 }
+[; ;app_led.c: 192: } else {
+[e $U 1029  ]
+[e :U 1028 ]
+{
+[; ;app_led.c: 193: led_turnoff_direct();
 "193
+[e ( _led_turnoff_direct ..  ]
+[; ;app_led.c: 194: m_led_run_para.mNoticeStatus = 1;
+"194
+[e = . _m_led_run_para 0 -> -> 1 `i `uc ]
+"195
+}
+[e :U 1029 ]
+"196
+}
+[e :U 1027 ]
+"197
+}
+[; ;app_led.c: 195: }
+[; ;app_led.c: 196: }
+[; ;app_led.c: 197: } else {
+[e $U 1030  ]
+[e :U 1026 ]
+{
+[; ;app_led.c: 198: m_led_run_para.mStartNotice = 0;
+"198
+[e = . _m_led_run_para 1 -> -> 0 `i `uc ]
+[; ;app_led.c: 199: cnt = 0;
+"199
+[e = F8383 -> -> 0 `i `ui ]
+"200
+}
+[e :U 1030 ]
+[; ;app_led.c: 200: }
+[; ;app_led.c: 201: }
+"201
+[e :UE 1025 ]
+}
+"202
 [v _led_ramp `(v ~T0 @X0 1 ef ]
 {
-[; ;app_led.c: 193: void led_ramp() {
+[; ;app_led.c: 202: void led_ramp() {
 [e :U _led_ramp ]
 [f ]
-[; ;app_led.c: 195: for(uint8_t i = 0; i < 5; i++) {
-"195
+[; ;app_led.c: 204: for(uint8_t i = 0; i < 5; i++) {
+"204
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1027  ]
-[e $U 1028  ]
-[e :U 1027 ]
-{
-[; ;app_led.c: 196: if(m_led_run_para.mCurrentBright[i] + 2 < m_led_run_para.mTargetBright[i]) {
-"196
-[e $ ! < + *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux -> -> 2 `i `ui *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux 1030  ]
-{
-[; ;app_led.c: 197: m_led_run_para.mCurrentBright[i] += 2;
-"197
-[e =+ *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux -> -> 2 `i `ui ]
-"198
-}
-[; ;app_led.c: 198: } else if(m_led_run_para.mCurrentBright[i] > m_led_run_para.mTargetBright[i] + 2) {
-[e $U 1031  ]
-[e :U 1030 ]
-[e $ ! > *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux + *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 2 `i `ui 1032  ]
-{
-[; ;app_led.c: 199: m_led_run_para.mCurrentBright[i] -= 2;
-"199
-[e =- *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux -> -> 2 `i `ui ]
-"200
-}
-[; ;app_led.c: 200: } else {
+[e $ < -> _i `i -> 5 `i 1032  ]
 [e $U 1033  ]
 [e :U 1032 ]
 {
-[; ;app_led.c: 201: m_led_run_para.mCurrentBright[i] = m_led_run_para.mTargetBright[i];
-"201
-[e = *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux ]
-"202
-}
-[e :U 1033 ]
-[e :U 1031 ]
-[; ;app_led.c: 202: }
-[; ;app_led.c: 203: led_load_duty[i](m_led_run_para.mCurrentBright[i]);
-"203
-[e ( *U *U + &U _led_load_duty * -> _i `ux -> -> # *U &U _led_load_duty `ui `ux (1 *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux ]
-"204
-}
-"195
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 1027  ]
-[e :U 1028 ]
-"204
-}
-[; ;app_led.c: 204: }
-[; ;app_led.c: 205: }
+[; ;app_led.c: 205: if(m_led_run_para.mCurrentBright[i] + 1 < m_led_run_para.mTargetBright[i]) {
 "205
-[e :UE 1026 ]
-}
+[e $ ! < + *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux -> -> 1 `i `ui *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux 1035  ]
+{
+[; ;app_led.c: 206: m_led_run_para.mCurrentBright[i] += 1;
 "206
-[v _led_run `(v ~T0 @X0 1 ef ]
-{
-[; ;app_led.c: 206: void led_run() {
-[e :U _led_run ]
-[f ]
-"208
-[v F8383 `uc ~T0 @X0 1 s cnt ]
-[i F8383
--> -> 0 `i `uc
-]
-[; ;app_led.c: 208: static uint8_t cnt = 0;
-[; ;app_led.c: 210: if(m_led_run_para.mStartNotice) {
-"210
-[e $ ! != -> . _m_led_run_para 1 `i -> -> -> 0 `i `uc `i 1035  ]
-{
-[; ;app_led.c: 211: led_notice();
-"211
-[e ( _led_notice ..  ]
-"212
+[e =+ *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux -> -> 1 `i `ui ]
+"207
 }
-[; ;app_led.c: 212: } else {
+[; ;app_led.c: 207: } else if(m_led_run_para.mCurrentBright[i] > m_led_run_para.mTargetBright[i] + 1) {
 [e $U 1036  ]
 [e :U 1035 ]
+[e $ ! > *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux + *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux -> -> 1 `i `ui 1037  ]
 {
-[; ;app_led.c: 213: cnt ++;
-"213
-[e ++ F8383 -> -> 1 `i `uc ]
-[; ;app_led.c: 214: if((cnt & 0x03) == 0x00) {
-"214
-[e $ ! == & -> F8383 `i -> 3 `i -> 0 `i 1037  ]
-{
-[; ;app_led.c: 215: cnt = 0;
-"215
-[e = F8383 -> -> 0 `i `uc ]
-[; ;app_led.c: 216: ir_long_action();
-"216
-[e ( _ir_long_action ..  ]
-"217
+[; ;app_led.c: 208: m_led_run_para.mCurrentBright[i] -= 1;
+"208
+[e =- *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux -> -> 1 `i `ui ]
+"209
 }
+[; ;app_led.c: 209: } else {
+[e $U 1038  ]
 [e :U 1037 ]
-[; ;app_led.c: 217: }
-[; ;app_led.c: 218: led_ramp();
-"218
-[e ( _led_ramp ..  ]
-"219
+{
+[; ;app_led.c: 210: m_led_run_para.mCurrentBright[i] = m_led_run_para.mTargetBright[i];
+"210
+[e = *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux *U + &U . _m_led_run_para 4 * -> _i `ux -> -> # *U &U . _m_led_run_para 4 `ui `ux ]
+"211
 }
+[e :U 1038 ]
 [e :U 1036 ]
-[; ;app_led.c: 219: }
-[; ;app_led.c: 220: }
+[; ;app_led.c: 211: }
+[; ;app_led.c: 212: led_load_duty[i](m_led_run_para.mCurrentBright[i]);
+"212
+[e ( *U *U + &U _led_load_duty * -> _i `ux -> -> # *U &U _led_load_duty `ui `ux (1 *U + &U . _m_led_run_para 3 * -> _i `ux -> -> # *U &U . _m_led_run_para 3 `ui `ux ]
+"213
+}
+"204
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 1032  ]
+[e :U 1033 ]
+"213
+}
+[; ;app_led.c: 213: }
+[; ;app_led.c: 214: }
+"214
+[e :UE 1031 ]
+}
+"215
+[v _led_run `(v ~T0 @X0 1 ef ]
+{
+[; ;app_led.c: 215: void led_run() {
+[e :U _led_run ]
+[f ]
+"217
+[v F8385 `uc ~T0 @X0 1 s cnt ]
+[i F8385
+-> -> 0 `i `uc
+]
+[; ;app_led.c: 217: static uint8_t cnt = 0;
+[; ;app_led.c: 219: if(m_led_run_para.mStartNotice) {
+"219
+[e $ ! != -> . _m_led_run_para 1 `i -> -> -> 0 `i `uc `i 1040  ]
+{
+[; ;app_led.c: 220: led_notice();
 "220
-[e :UE 1034 ]
+[e ( _led_notice ..  ]
+"221
+}
+[; ;app_led.c: 221: } else {
+[e $U 1041  ]
+[e :U 1040 ]
+{
+[; ;app_led.c: 222: cnt ++;
+"222
+[e ++ F8385 -> -> 1 `i `uc ]
+[; ;app_led.c: 223: if((cnt & 0x03) == 0x00) {
+"223
+[e $ ! == & -> F8385 `i -> 3 `i -> 0 `i 1042  ]
+{
+[; ;app_led.c: 224: cnt = 0;
+"224
+[e = F8385 -> -> 0 `i `uc ]
+[; ;app_led.c: 225: ir_long_action();
+"225
+[e ( _ir_long_action ..  ]
+"226
+}
+[e :U 1042 ]
+[; ;app_led.c: 226: }
+[; ;app_led.c: 227: led_ramp();
+"227
+[e ( _led_ramp ..  ]
+"228
+}
+[e :U 1041 ]
+[; ;app_led.c: 228: }
+[; ;app_led.c: 229: }
+"229
+[e :UE 1039 ]
 }
